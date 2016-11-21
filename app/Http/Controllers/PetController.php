@@ -68,7 +68,7 @@ class PetController extends Controller
      */
     public function show($id)
     {
-        //
+        return view("pet.show", ['pet' => Pet::find($id)]);
     }
 
     /**
@@ -102,6 +102,8 @@ class PetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pet::find($id)->delete();
+        Alert::success('Pet deleted');
+        return redirect('pets');
     }
 }

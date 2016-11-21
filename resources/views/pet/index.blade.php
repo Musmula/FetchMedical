@@ -10,7 +10,7 @@
                         @if(count(Auth::user()->pets) > 0)
                             @foreach(Auth::user()->pets as $pet)
                                 <li class="list-group-item">
-                                    <a href="#">
+                                    <a href="{{ url('/pets/' . $pet->id) }}">
                                         {{ $pet->name }}
                                     </a>
                                     <span class="pull-right">Queued for processing</span>

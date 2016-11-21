@@ -56,11 +56,13 @@
 
                                     <ul class="dropdown-menu" role="menu">
                                         @foreach(Auth::user()->pets as $pet)
-                                            <li><a href="#">{{ $pet->name }}</a></li>
+                                            <li><a href="{{ url('/pets/' . $pet->id) }}">{{ $pet->name }}</a></li>
                                         @endforeach
 
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="{{ url('home') }}">All</a></li>
+                                        @if(count(Auth::user()->pets) > 1)
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="{{ url('home') }}">All</a></li>
+                                        @endif
                                     </ul>
                                 </li>
 

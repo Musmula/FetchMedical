@@ -2,6 +2,10 @@
 
 @section('content')
 
+<div class="container-fluid" id="profile-pic-lg">
+    <img src="https://www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}?s=200">
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -9,7 +13,6 @@
             <div class="alert alert-info alert-dismissible" role="alert">
                 Want to change your profile picture?
                 We pull those from <a href="https://en.gravatar.com/" target="_blank" class="alert-link">gravatar.com</a>
-                (Actually we don't... not yet anyway)
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
 

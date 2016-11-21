@@ -9,4 +9,9 @@ class SettingsController extends Controller
     public function index() {
         return view("settings");
     }
+
+    public function deleteAcc() {
+        Auth::user()->delete();
+        return redirect('/');
+    }
 }

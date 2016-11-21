@@ -20,6 +20,8 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+
+    @yield('head')
 </head>
 <body>
     <div id="app">

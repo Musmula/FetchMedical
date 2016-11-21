@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container-fluid" id="profile-pic-lg">
-    <img src="https://www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}?s=200?d=mm">
+    <img src="https://www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}?s=200&d=mm">
 </div>
 
 <div class="container">

@@ -5783,5 +5783,8 @@ button.close {
     border-radius: 50%;
     border: 5px solid #fff;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3); }
+  #profile-pic-lg.admin {
+    background: #3097D1 url("../img/admin-bg.png") center/cover;
+    background-attachment: fixed; }
 
 /*# sourceMappingURL=app.css.map */

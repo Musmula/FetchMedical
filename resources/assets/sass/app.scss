@@ -8,25 +8,6 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-.nav.navbar-nav .fa {
-    color: $text-color;
-    margin-right: 7px;
-}
+@import "icon-styles";
 
-.fa-btn {
-    margin-right: 7px;
-}
-
-#profile-pic-lg {
-    text-align: center;
-    margin-top: -40px;
-    padding: 40px;
-    margin-bottom: 20px;
-    background: $brand-primary;
-
-        img {
-            border-radius: 50%;
-            border: 5px solid #fff;
-            box-shadow: 0 7px 10px rgba(0, 0, 0, .3);
-        }
-}
+@import "settings-page";

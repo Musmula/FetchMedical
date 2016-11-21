@@ -31,7 +31,7 @@ class SettingsController extends Controller
             }
 
             if (isset($request->password) && $request->password == $request->password_confirmation && $request->password != "") {
-                $user->password = isset($request->password) ? $request->password : Auth::user()->password;
+                $user->password = isset($request->password) ? bcrypt($request->password) : Auth::user()->password;
             }
 
             $user->save();

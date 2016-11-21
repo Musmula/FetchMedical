@@ -79,7 +79,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img src="https://www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}?s=20&d=404">
+                                    <img src="https://www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}?s=20&d=mm">
                                     &nbsp;
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>

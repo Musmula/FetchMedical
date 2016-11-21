@@ -7,7 +7,7 @@
         text-align: center;
         color: #fff;
         background-color: #3097D1;
-        box-shadow: 0 1px 7px 0px rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 4px 0px rgba(0, 0, 0, .1);
     }
 
     #body {

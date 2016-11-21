@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -46,16 +47,22 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Pets <span class="caret"></span>
-                            </a>
+                        @if(Auth::check() && count(Auth::user()->pets) > 0)
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Pets <span class="caret"></span>
+                                </a>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Cookie Monster</a></li>
-                                <li><a href="#">Some other pet</a></li>
-                            </ul>
-                        </li>
+                                <ul class="dropdown-menu" role="menu">
+                                    @foreach(Auth::user()->pets as $pet)
+                                        <li><a href="#">{{ $pet->name }}</a></li>
+                                    @endforeach
+
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="{{ url('home') }}">All</a></li>
+                                </ul>
+                            </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -99,6 +106,10 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <script src="/js/app.js"></script>
+
+    @include('sweet::alert')
+    
 </body>
 </html>

@@ -17,7 +17,8 @@
                 <div class="panel-heading">Your basic account information</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/settings') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/settings/basic') }}">
+                        {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
@@ -46,11 +47,25 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                        <div class="form-group{{ $errors->has('current_password') ? ' has-error' : '' }}">
+                            <label for="current_password" class="col-md-4 control-label">Current Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="current_password" type="password" class="form-control" name="current_password" required>
+
+                                @if ($errors->has('current_password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('current_password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">New Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -64,7 +79,7 @@
                             <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                             </div>
                         </div>
 
@@ -85,7 +100,11 @@
                 <div class="panel-heading">Danger zone</div>
                 <div class="panel-body">
                     <p>Once you delete your account, there is no going back. Please be certain.</p>
-                    <button class="btn btn-danger">Delete my account</button>
+                    <form method="POST" action="{{ url('/account') }}">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button class="btn btn-danger">Delete my account</button>
+                    </form>
                 </div>
             </div>
 

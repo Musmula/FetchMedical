@@ -23,7 +23,7 @@
                     <li class="list-group-item">
                         Gender: {{ $pet->gender }}
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-warning">
                         Status: Queued for processing
                     </li>
                 </ul>

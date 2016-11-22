@@ -26,8 +26,15 @@ class SettingsController extends Controller
             $user = Auth::user();
             $user->name = isset($request->name) ? $request->name : Auth::user()->name;
 
-            if ($request->email != Auth::user()->email && count(User::where('email', $request->email)->get()) == 0) {
+            $users_with_that_email = count(User::where('email', $request->email)->get());
+
+            if ($request->email != Auth::user()->email && $users_with_that_email == 0) {
                 $user->email = $request->email;
+            }
+
+            elseif ($request->email != Auth::user()->email && $users_with_that_email > 0) {
+                alert()->error('Email already in use');
+                return redirect()->back();
             }
 
             if (isset($request->password) && $request->password == $request->password_confirmation && $request->password != "") {
@@ -35,7 +42,7 @@ class SettingsController extends Controller
             }
 
             $user->save();
-            alert()->success('Your account information has been updated')->autoclose(3000);
+            alert()->success('Your account information has been updated');
             return redirect()->back();
         }
 
@@ -45,7 +52,7 @@ class SettingsController extends Controller
 
     public function deleteAcc() {
         Auth::user()->delete();
-        alert()->success('Your account has been deleted')->autoclose(3500);
+        alert()->success('Your account has been deleted');
         return redirect('/');
     }
 }

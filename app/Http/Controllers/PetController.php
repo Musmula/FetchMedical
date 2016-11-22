@@ -72,7 +72,6 @@ class PetController extends Controller
         if ($this->hasPermission(Auth::user(), $pet)) {
             return view("pet.show", ['pet' => Pet::find($id)]);
         }
-        
     }
 
     /**

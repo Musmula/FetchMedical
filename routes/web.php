@@ -20,6 +20,19 @@ Auth::routes();
 Route::get('/home', 'PetController@index');
 Route::resource('pets', 'PetController');
 
+
+/*
+|--------------------------------------------------------------------------
+| The settings routes
+|--------------------------------------------------------------------------
+*/
 Route::get("/settings", "SettingsController@index");
 Route::post("/settings/basic", "SettingsController@updateBasicSettings");
 Route::delete('/account', 'SettingsController@deleteAcc');
+
+/*
+|--------------------------------------------------------------------------
+| The User management routes
+|--------------------------------------------------------------------------
+*/
+Route::get("/users", "UserController@index");

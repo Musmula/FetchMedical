@@ -80,7 +80,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#">Pet Queue</a></li>
                                     <li><a href="#">Pet Search</a></li>
-                                    <li><a href="#">User Management</a></li>
+                                    <li><a href="{{ url('/users') }}">User Management</a></li>
                                 </ul>
                             </li>
                         @endif

@@ -68,7 +68,11 @@ class PetController extends Controller
      */
     public function show($id)
     {
-        return view("pet.show", ['pet' => Pet::find($id)]);
+        $pet = Pet::find($id);
+        if ($this->hasPermission(Auth::user(), $pet)) {
+            return view("pet.show", ['pet' => Pet::find($id)]);
+        }
+        
     }
 
     /**
@@ -79,7 +83,10 @@ class PetController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pet = Pet::find($id);
+        if ($this->hasPermission(Auth::user(), $pet)) {
+            return view("pet.edit", ['pet' => Pet::find($id)]);
+        }
     }
 
     /**
@@ -91,7 +98,12 @@ class PetController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pet = Pet::find($id);
+        if ($this->hasPermission(Auth::user(), $pet)) {
+            $pet->update($request->except(['_token', '_method']));
+            alert()->success('Pet information updated');
+            return redirect('/pets');
+        }
     }
 
     /**
@@ -102,8 +114,24 @@ class PetController extends Controller
      */
     public function destroy($id)
     {
-        Pet::find($id)->delete();
-        Alert::success('Pet deleted');
-        return redirect('pets');
+        $pet = Pet::find($id);
+        if ($this->hasPermission(Auth::user(), $pet)) {
+            $pet->delete();
+            alert()->success('Pet deleted');
+            return redirect('/pets');
+        }
+    }
+
+    public function hasPermission($user, $pet) {
+        if ($user->is_admin) {
+            return true;
+        }
+
+        if ($pet->user == $user) {
+            return true;
+        }
+
+        alert()->error('You don\'t have permission to access this page');
+        return redirect('/pets');
     }
 }

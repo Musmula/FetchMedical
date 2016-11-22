@@ -29,12 +29,20 @@
                 </ul>
 
                 <div class="panel-body">
-                    <button class="btn btn-default">Request an edit</button>
-                    <form class="pull-right" method="POST" action="{{ url('/pets/' . $pet->id) }}">
+                    <a href="{{ url('/pets/' . $pet->id . '/edit') }}" class="btn btn-default">
+                        <i class="fa fa-btn fa-edit"></i>
+                        Edit basic information
+                    </a>
+                    <button class="btn btn-default">
+                        <i class="fa fa-btn fa-user-md"></i>
+                        Request a higher level edit
+                    </button>
+                    <form style="display: inline-block;" method="POST" action="{{ url('/pets/' . $pet->id) }}">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <button class="btn btn-danger">
-                            <i class="fa fa-trash"></i>
+                            <i class="fa fa-btn fa-trash"></i>
+                            Delete all records
                         </button>
                     </form>
                 </div>

@@ -70,6 +70,20 @@
                                 <li><a href="{{ url('pets') }}">Pets</a></li>
                             @endif
                         @endif
+
+                        @if(Auth::check() && Auth::user()->is_admin)
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Admin <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Pet Queue</a></li>
+                                    <li><a href="#">Pet Search</a></li>
+                                    <li><a href="#">User Management</a></li>
+                                </ul>
+                            </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

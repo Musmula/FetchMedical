@@ -29,6 +29,11 @@
                 </ul>
 
                 <div class="panel-body">
+                    @if(isset($pet->notes))
+                        <p>Notes:</p>
+                        <textarea readonly class="well" style="width: 100%; resize: vertical;" rows="4">{{ $pet->notes }}</textarea>
+                    @endif
+
                     <div class="btn-group" role="group">
                         <a href="{{ url('/pets/' . $pet->id . '/edit') }}" data-toggle="tooltip" title="Edit basic information" class="btn btn-default">
                             <i class="fa fa-conditional fa-edit"></i>

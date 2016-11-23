@@ -13,6 +13,7 @@ class Pet extends Model
         'species',
         'breed',
         'gender',
+        'notes',
 
     ];
 

@@ -42,6 +42,20 @@
                             </div>
                         </div> {{-- /breed --}}
 
+                        <div class="form-group{{ $errors->has('notes') ? ' has-error' : '' }}">
+                            <label for="notes" class="col-md-4 control-label">Notes</label>
+
+                            <div class="col-md-6">
+                                <textarea id="notes" class="form-control" name="notes" style="resize: vertical;" rows="4">{{ $pet->notes }}</textarea>
+
+                                @if ($errors->has('notes'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('notes') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div> {{-- /notes --}}
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

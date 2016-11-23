@@ -58,7 +58,7 @@ class PetController extends Controller
             'species'   => $request->species,
             'breed'     => $request->breed,
             'gender'    => $request->gender,
-
+            'notes'     => $request->notes
         ]);
 
         Alert::success('Pet registered successfully');

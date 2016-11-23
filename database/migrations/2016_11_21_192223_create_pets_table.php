@@ -17,7 +17,7 @@ class CreatePetsTable extends Migration
             $table->increments('id')->unsigned()->index();
             $table->integer('user_id')->unsigned()->index();
             $table->string('name');
-            $table->string('species');
+            $table->enum('species', ['Cat', 'Dog']);
             $table->string('breed')->nullable();
             $table->enum('gender', ['Female', 'Male']);
             $table->boolean('processed')->default('0');

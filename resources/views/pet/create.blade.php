@@ -31,7 +31,10 @@
                             <label for="species" class="col-md-4 control-label">Species</label>
 
                             <div class="col-md-6">
-                                <input id="species" type="text" class="form-control" name="species" value="{{ old('species') }}" required>
+                            <select id="species" name="species" class="form-control" value="{{ old('species') }}" required>
+                                    <option>Cat</option>
+                                    <option>Dog</option>
+                                </select>
 
                                 @if ($errors->has('species'))
                                     <span class="help-block">
@@ -56,7 +59,7 @@
                         </div> {{-- /breed --}}
 
                         <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
-                            <label for="gender" class="col-md-4 control-label">gender</label>
+                            <label for="gender" class="col-md-4 control-label">Gender</label>
 
                             <div class="col-md-6">
                                 <select id="gender" name="gender" class="form-control" value="{{ old('gender') }}" required>
@@ -75,6 +78,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
+                                    <i aria-hidden="true" class="fa fa-btn fa-paw"></i>
                                     Register
                                 </button>
                             </div>

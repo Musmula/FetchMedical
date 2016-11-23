@@ -1,0 +1,9 @@
+@media (max-width: 655px) {
+    .fa-conditional {
+        margin-right: 0;
+
+        &.title {
+            display: none;
+        }
+    }
+}

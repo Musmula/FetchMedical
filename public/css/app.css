@@ -5770,7 +5770,7 @@ button.close {
   color: #636b6f;
   margin-right: 7px; }
 
-.fa-btn {
+.fa-btn, .fa-conditional {
   margin-right: 7px; }
 
 #profile-pic-lg {
@@ -5786,5 +5786,11 @@ button.close {
   #profile-pic-lg.admin {
     background: #3097D1 url("../img/admin-bg.png") center/cover;
     background-attachment: fixed; }
+
+@media (max-width: 655px) {
+  .fa-conditional {
+    margin-right: 0; }
+    .fa-conditional.title {
+      display: none; } }
 
 /*# sourceMappingURL=app.css.map */

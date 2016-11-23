@@ -30,20 +30,22 @@
 
                 <div class="panel-body">
                     <div class="btn-group" role="group">
-                        <a href="{{ url('/pets/' . $pet->id . '/edit') }}" class="btn btn-default">
-                            <i class="fa fa-btn fa-edit"></i>
-                            Edit basic information
+                        <a href="{{ url('/pets/' . $pet->id . '/edit') }}" data-toggle="tooltip" title="Edit basic information" class="btn btn-default">
+                            <i class="fa fa-conditional fa-edit"></i>
+                            <span class="title fa-conditional">Edit basic information</span>
                         </a>
-                        <button class="btn btn-default">
-                            <i class="fa fa-btn fa-user-md"></i>
-                            Request a higher level edit
+
+                        <button class="btn btn-default" data-toggle="tooltip" title="Request a higher level edit">
+                            <i class="fa fa-conditional fa-user-md"></i>
+                            <span class="title fa-conditional">Request a higher level edit</span>
                         </button>
+
                         <form style="display: inline;" method="POST" action="{{ url('/pets/' . $pet->id) }}">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <button class="btn btn-danger" style="border-bottom-left-radius: 0; border-top-left-radius: 0">
-                                <i class="fa fa-btn fa-trash"></i>
-                                Delete all records
+                            <button class="btn btn-danger" style="border-bottom-left-radius: 0; border-top-left-radius: 0" data-toggle="tooltip" title="Delete all records">
+                                <i class="fa fa-conditional fa-trash"></i>
+                                <span class="title fa-conditional">Delete all records</span>
                             </button>
                         </form>
                     </div>

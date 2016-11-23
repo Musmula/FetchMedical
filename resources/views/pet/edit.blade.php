@@ -28,6 +28,20 @@
                             </div>
                         </div> {{-- /name --}}
 
+                        <div class="form-group{{ $errors->has('breed') ? ' has-error' : '' }}">
+                            <label for="breed" class="col-md-4 control-label">Name</label>
+
+                            <div class="col-md-6">
+                                <input id="breed" type="text" class="form-control" name="breed" value="{{ $pet->breed }}" required autofocus>
+
+                                @if ($errors->has('breed'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('breed') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div> {{-- /breed --}}
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

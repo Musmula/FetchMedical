@@ -59,10 +59,15 @@
                                             <li><a href="{{ url('/pets/' . $pet->id) }}">{{ $pet->name }}</a></li>
                                         @endforeach
 
+                                        <li role="separator" class="divider"></li>
+                                        
                                         @if(count(Auth::user()->pets) > 1)
-                                            <li role="separator" class="divider"></li>
                                             <li><a href="{{ url('home') }}">All</a></li>
                                         @endif
+
+                                        <li><a href="{{ url('/pets/create') }}">
+                                            New
+                                        </a></li>
                                     </ul>
                                 </li>
 
@@ -78,9 +83,24 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Pet Queue</a></li>
-                                    <li><a href="#">Pet Search</a></li>
-                                    <li><a href="{{ url('/users') }}">User Management</a></li>
+                                    <li>
+                                        <a href="#">
+                                            <i aria-hidden="true" class="fa fa-refresh"></i>
+                                            Pet Queue
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i aria-hidden="true" class="fa fa-search"></i>
+                                            Pet Search
+                                        </a>
+                                    </li>
+                                    {{-- <li>
+                                        <a href="{{ url('/users') }}">
+                                            <i aria-hidden="true" class="fa fa-user"></i>
+                                            User Management
+                                        </a>
+                                    </li> --}}
                                 </ul>
                             </li>
                         @endif

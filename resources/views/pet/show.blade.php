@@ -5,12 +5,15 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <div class="panel panel-default">
+            <div class="panel panel-warning">
                 <div class="panel-heading">
                     <h2>{{ $pet->name }}</h2>
                 </div>
 
                 <ul class="list-group">
+                    <li class="list-group-item well well-sm" style="margin-bottom: 0; border-bottom: none">
+                        Status: Queued for processing
+                    </li>
                     <li class="list-group-item">
                         Registered {{ $pet->created_at->diffForHumans() }}
                     </li>
@@ -22,9 +25,6 @@
                     </li>
                     <li class="list-group-item">
                         Gender: {{ $pet->gender }}
-                    </li>
-                    <li class="list-group-item list-group-item-warning">
-                        Status: Queued for processing
                     </li>
                 </ul>
 

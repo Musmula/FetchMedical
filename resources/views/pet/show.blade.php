@@ -29,7 +29,7 @@
                 </ul>
 
                 <div class="panel-body">
-                    @if(isset($pet->notes))
+                    @if($pet->notes != "")
                         <p>Notes:</p>
                         <textarea readonly class="well" style="width: 100%; resize: vertical;" rows="4">{{ $pet->notes }}</textarea>
                     @endif

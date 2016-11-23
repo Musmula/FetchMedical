@@ -84,7 +84,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ url('/pets/queue/') }}">
                                             <i aria-hidden="true" class="fa fa-refresh"></i>
                                             Pet Queue
                                         </a>

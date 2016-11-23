@@ -66,7 +66,6 @@ class PetController extends Controller
             'name'      => $pet->name,
             'type'      => 'Pet registration',
             'message'   => 'This action has been triggered automatically when the pet was registered. Please fill in the medical records for this pet for the first time.',
-            'resolved'  => 0
         ]);
 
         Alert::success('Our team has been notified of the registration and they will fill in the medical records your vet provides them with as soon as possible', 'Pet registered successfully')->persistent('Ok');

@@ -12,7 +12,6 @@ class PetQueue extends Model
         'name',
         'type',
         'message',
-        'resolved',
 
     ];
 

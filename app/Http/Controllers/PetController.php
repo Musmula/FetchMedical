@@ -111,7 +111,16 @@ class PetController extends Controller
     {
         $pet = Pet::find($id);
         if ($this->hasPermission(Auth::user(), $pet)) {
-            $pet->update($request->except(['_token', '_method']));
+            if (Auth::user()->is_admin) {
+                $pet->update($request->except(['_token', '_method']));
+            }
+
+            else {
+                $pet->name  = $request->name;
+                $pet->notes = $request->notes;
+                $pet->save();
+            }
+
             alert()->success('Pet information updated');
             return redirect('/pets');
         }

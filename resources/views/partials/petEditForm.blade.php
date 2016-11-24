@@ -37,8 +37,6 @@
         </div>
     </div> {{-- /species --}}
 
-    @endif
-
     <div class="form-group{{ $errors->has('breed') ? ' has-error' : '' }}">
         <label for="breed" class="col-md-4 control-label">Breed</label>
 
@@ -52,8 +50,6 @@
             @endif
         </div>
     </div> {{-- /breed --}}
-
-    @if(Auth::user()->is_admin)
 
     <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
         <label for="gender" class="col-md-4 control-label">Gender</label>

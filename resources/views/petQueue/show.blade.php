@@ -19,8 +19,15 @@
             </div> {{-- Panel end --}}
         </div>
 
+        <div class="col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Medical records</div>
+                <div class="panel-body">
+                    @include('partials.petMedicalRecords', ['records' => $pet->medicalRecords])
+                </div>
+            </div> {{-- Panel end --}}
+        </div>
 
-        
     </div>
 </div>
 @endsection

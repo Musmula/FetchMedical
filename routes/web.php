@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'PetController@index');
 Route::resource('/pets/queue', 'PetQueueController');
 Route::resource('/pets', 'PetController');
+Route::resource('/records', 'RecordController');
 
 
 /*

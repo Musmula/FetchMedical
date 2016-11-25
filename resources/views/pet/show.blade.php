@@ -14,23 +14,23 @@
                     <li class="list-group-item well well-sm" style="margin-bottom: 0; border-bottom: none">
                         Status: Queued for processing
                     </li>
-                    <li class="list-group-item">
-                        Registered {{ $pet->created_at->diffForHumans() }}
-                    </li>
+
                     <li class="list-group-item">
                         Species: {{ $pet->species }}
                     </li>
+                    
                     <li class="list-group-item">
                         Breed: {{ $pet->breed }}
                     </li>
+                    
                     <li class="list-group-item">
                         Gender: {{ $pet->gender }}
                     </li>
                 </ul>
 
-                <div class="panel-body">
+                <div class="panel-body" style="text-align: center;">
                     @if($pet->notes != "")
-                        <p>Notes:</p>
+                        <p style="text-align: left;">Notes:</p>
                         <textarea readonly class="well" style="width: 100%; resize: vertical;" rows="4">{{ $pet->notes }}</textarea>
                     @endif
 

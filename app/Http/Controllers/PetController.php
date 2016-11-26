@@ -165,4 +165,24 @@ class PetController extends Controller
         alert()->error('You don\'t have permission to access this page');
         return redirect('/pets');
     }
+
+    public function requestEdit($id) {
+        return view("pet.editRequest", ['pet' => Pet::find($id)]);
+    }
+
+    public function fireRequest(Request $request, $id) {
+        $pet = Pet::find($id);
+        $pet->processed = false;
+        $pet->save();
+
+        PetQueue::create([
+            'pet_id'    => $pet->id,
+            'name'      => $request->name,
+            'type'      => 'User request',
+            'message'   => $request->message
+        ]);
+
+        alert()->success('Our team will get to it as soon as they can. Plese don\'t repeat your requests since we go over ALL of them.', 'Your request has been dispatched')->persistent('Close');
+        return redirect('/pets/' . $pet->id);
+    }
 }

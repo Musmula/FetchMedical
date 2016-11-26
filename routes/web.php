@@ -18,6 +18,8 @@ Route::get('/about', 'PagesController@about');
 Auth::routes();
 
 Route::get('/home', 'PetController@index');
+Route::get("/pets/{id}/request", "PetController@requestEdit");
+Route::post("/pets/{id}/request", "PetController@fireRequest");
 Route::resource('/pets/queue', 'PetQueueController');
 Route::resource('/pets', 'PetController');
 Route::resource('/records', 'RecordController');
@@ -38,3 +40,11 @@ Route::delete('/account', 'SettingsController@deleteAcc');
 |--------------------------------------------------------------------------
 */
 Route::get("/users", "UserController@index");
+// Route::delete("/user/{id}", "UserController@destroy");
+Route::put("/user/{id}/ban", "UserController@ban");
+
+// 
+// 
+// 
+// Testing shit
+Route::get("/profile/{id}", "PDFController@PetProfileDownload");

@@ -92,6 +92,8 @@ class PetQueueController extends Controller
      */
     public function destroy($id)
     {
-        //
+        PetQueue::find($id)->delete();
+        alert()->success('The queue item has been destroyed', 'Done');
+        return redirect('/pets/queue');
     }
 }

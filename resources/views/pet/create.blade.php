@@ -63,7 +63,7 @@
                             <label for="color" class="col-md-4 control-label">Color</label>
 
                             <div class="col-md-6">
-                                <input id="color" type="text" class="form-control" name="color" value="{{ old('color') }}" required>
+                                <input id="color" type="text" class="form-control" name="color" value="{{ old('color') }}">
 
                                 @if ($errors->has('color'))
                                     <span class="help-block">

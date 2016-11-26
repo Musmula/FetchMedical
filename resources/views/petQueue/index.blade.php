@@ -11,9 +11,9 @@
                             @foreach($queue as $item)
                                 <li class="list-group-item">
                                     <a href="{{ url('/pets/queue/' . $item->id) }}">
-                                        {{ $item->name }}
+                                        {{ $item->type }}
                                     </a>
-                                    <span class="pull-right"> {{ $item->type }} </span>
+                                    <span class="pull-right"> {{ $item->name }} </span>
                                     <div class="clearfix"></div>
                                 </li>
                             @endforeach()

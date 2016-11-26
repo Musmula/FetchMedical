@@ -51,6 +51,21 @@
         </div>
     </div> {{-- /breed --}}
 
+    <div class="form-group{{ $errors->has('color') ? ' has-error' : '' }}">
+        <label for="color" class="col-md-4 control-label">Color</label>
+
+        <div class="col-md-6">
+            <input id="color" type="text" class="form-control" name="color" value="{{ $pet->color }}" required>
+
+            @if ($errors->has('color'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('color') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div> {{-- /color --}}
+
+
     <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
         <label for="gender" class="col-md-4 control-label">Gender</label>
 

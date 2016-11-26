@@ -74,10 +74,19 @@ class RecordController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $data = $request->except(['_token', '_method', 'pet_id']);
+
+        // Nullify them empty strings because the database won't have those in integer fields
+        foreach ($data as $key => $value) {
+            if ($value == "") {
+                $data[$key] = null;
+            }
+        }
         $pet = Pet::find($request->pet_id);
         $records = $pet->medicalRecords;
 
-        $records->update($request->except(['_token', '_method', 'pet_id']));
+        $records->update($data);
         alert()->success('Medical records updated');
         return redirect()->back();
     }

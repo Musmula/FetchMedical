@@ -12,10 +12,13 @@ class PDFController extends Controller
         $this->middleware('auth');
     }
 
-    public function PetProfileDownload($id) {
+    public function PetProfile($id, $action) {
         $pet = Pet::find($id);
-        // $pdf = PDF::loadview('pet.pdf.profile', ['pet' => $pet]);
-        // return $pdf->stream();
-        return view('pet.pdf.profile', ['pet' => $pet]);
+        $pdf = PDF::loadview('pet.pdf.profile', ['pet' => $pet]);
+        if ($action == 'view') {
+            return $pdf->stream();
+        }
+        return $pdf->download('Fetchmedical profile for ' . $pet->name . '.pdf');
+        // return view('pet.pdf.profile', ['pet' => $pet]);
     }
 }

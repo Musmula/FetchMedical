@@ -53,8 +53,12 @@
                             <i class="fa fa-user-md"></i>
                         </a>
 
-                        <a href="#" class="btn btn-default" data-toggle="tooltip" title="Download profile">
+                        <a href="{{ url('/pets/' . $pet->id . '/profile/download') }}" class="btn btn-default" data-toggle="tooltip" title="Download profile">
                             <i class="fa fa-download"></i>
+                        </a>
+
+                        <a href="{{ url('/pets/' . $pet->id . '/profile/view') }}" class="btn btn-default" data-toggle="tooltip" title="View profile as pdf">
+                            <i class="fa fa-eye"></i>
                         </a>
 
                         <a href="#" class="btn btn-default" data-toggle="tooltip" title="Email medical records">

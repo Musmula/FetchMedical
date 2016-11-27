@@ -18,6 +18,14 @@
     p {
         text-align: center;
     }
+
+    a {
+        color: #636b6f;
+    }
+
+    a:hover {
+        color: #636b6f;
+    }
 </style>
 
 @stop
@@ -26,11 +34,11 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-            <div class="panel panel-default">
+            <div class="panel panel-default" onclick="window.open('http://dvorski.tech/', '_blank');">
                 <div class="panel-heading" id="heading"><h2>Developed by</h2></div>
 
                 <div class="panel-body" id="body">
-                    Oliver Dvorski
+                    <a target="_blank" href="http://dvorski.tech">Oliver Dvorski</a>
                 </div>
             </div> {{-- Panel ending --}}
 

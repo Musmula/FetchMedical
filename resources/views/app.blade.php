@@ -153,6 +153,7 @@
     <script src="/js/app.js"></script>
 
     @include('sweet::alert')
+    @include('partials.analyticstracking')
     
 </body>
 </html>

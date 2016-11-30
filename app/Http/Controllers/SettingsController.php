@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Hash;
 
 class SettingsController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index() {
         return view("settings");
     }

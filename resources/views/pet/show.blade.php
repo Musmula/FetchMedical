@@ -5,14 +5,14 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <div class="panel panel-warning">
+            <div class="panel panel-{{ $pet->processed ? 'primary' : 'warning' }}">
                 <div class="panel-heading">
                     <h2>{{ $pet->name }}</h2>
                 </div>
 
                 <ul class="list-group">
                     <li class="list-group-item">
-                        Status: Queued for processing
+                        Status: {{ $pet->processed ? 'Processed' : 'Queued for processing' }}
                     </li>
 
                     <li class="list-group-item">
@@ -53,11 +53,11 @@
                             <i class="fa fa-user-md"></i>
                         </a>
 
-                        <a href="{{ url('/pets/' . $pet->id . '/profile/download') }}" class="btn btn-default" data-toggle="tooltip" title="Download profile">
+                        <a href="{{ url('/pets/' . $pet->id . '/pdf/download') }}" class="btn btn-default" data-toggle="tooltip" title="Download profile">
                             <i class="fa fa-download"></i>
                         </a>
 
-                        <a href="{{ url('/pets/' . $pet->id . '/profile/view') }}" class="btn btn-default" data-toggle="tooltip" title="View profile as pdf">
+                        <a href="{{ url('/pets/' . $pet->id . '/pdf/view') }}" target="_blank" class="btn btn-default" data-toggle="tooltip" title="View profile as pdf">
                             <i class="fa fa-eye"></i>
                         </a>
 
@@ -70,13 +70,27 @@
                         <form style="display: inline;" method="POST" action="{{ url('/pets/' . $pet->id) }}">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <button class="btn btn-danger" style="border-bottom-left-radius: 0; border-top-left-radius: 0" data-toggle="tooltip" title="Delete all records">
+                            <button class="btn btn-danger" data-toggle="tooltip" title="Delete all records">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </form>
                     </div>
+                </div> 
+            </div> {{-- Panel end --}} 
+
+            @if($pet->processed)
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2>Medical records</h2>
+                    </div>
+
+                    <div class="panel-body">
+                        All the things
+                    </div>
                 </div>
-            </div>
+
+            @endif
 
         </div>
     </div>

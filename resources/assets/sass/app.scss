@@ -5,11 +5,14 @@
 // Variables
 @import "variables";
 
-// Bootstrap
+// Node dependencies
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/sweetalert/dist/sweetalert";
 
 @import "icon-styles";
 
 @import "settings-page";
 
 @import "button-dynamics";
+
+@import "bootstrap-overrides"

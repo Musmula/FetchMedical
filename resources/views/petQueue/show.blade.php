@@ -33,11 +33,14 @@
         <form style="text-align: center; margin-bottom: 20px" method="POST" action="{{ url('/pets/queue/' . $item->id) }}">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
+            <input type="checkbox" name="processed" id="processed" checked>
+            <label for="processed">Set pet status to <i>processed</i></label>
+            <br>
             <button class="btn btn-success">
                 <i class="fa fa-btn fa-check"></i>
                 Mark as done
             </button>
-        </form>
+        </form> 
 
     </div>
 </div>

@@ -12,7 +12,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -121,10 +120,20 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ url('settings') }}">
+                                    <li>
+                                        <a href="{{ url('settings') }}">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            Profile
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('settings') }}">
                                             <i class="fa fa-cog" aria-hidden="true"></i>
                                             Settings
-                                        </a></li>
+                                        </a>
+                                    </li>
+
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();

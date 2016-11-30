@@ -47,4 +47,4 @@ Route::put("/user/{id}/ban", "UserController@ban");
 // 
 // 
 // Testing shit
-Route::get("/pets/{id}/profile/{action}", "PDFController@PetProfile");
+Route::get("/pets/{id}/pdf/{action}", "PDFController@PetProfile");

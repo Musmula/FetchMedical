@@ -90,9 +90,16 @@ class PetQueueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        PetQueue::find($id)->delete();
+        $queueItem = PetQueue::find($id);
+        if ($queueItem->type == 'Pet registration' || $request->processed) {
+            $pet = $queueItem->pet;
+            $pet->processed = 1;
+            $pet->save();
+        }
+
+        $queueItem->delete();
         alert()->success('The queue item has been destroyed', 'Done');
         return redirect('/pets/queue');
     }

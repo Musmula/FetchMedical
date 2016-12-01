@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use Hash;
 
 class ProfileController extends Controller
 {
@@ -14,8 +16,35 @@ class ProfileController extends Controller
         return view("profile.basic", ['active' => 'basic']);
     }
 
+    public function updateBasic(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required'
+        ]);
+
+        Auth::user()->update($request->except('_method', '_token'));
+        alert()->success('Profile updated');
+        return redirect()->back();
+    }
+
     public function password() {
         return view("profile.password", ['active' => 'password']);
+    }
+
+    public function updatePassword(Request $request) {
+        // return $request->all();
+        $this->validate($request, [
+            'newPassword' => 'required|confirmed',
+            'password' => 'required',
+        ]);
+
+        if (Hash::check($request->password, Auth::user()->password)) {
+            Auth::user()->update(['password' => Hash::make($request->newPassword)]);
+            alert()->success('Password updated');
+            return redirect()->back();
+        }
+
+        return redirect()->back()->withErrors(['password' => 'The password you provided doesn\'t mactch our records']);
     }
 
     public function contact() {

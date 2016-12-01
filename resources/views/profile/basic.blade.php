@@ -4,7 +4,7 @@
 
     <div class="spacer"></div>
 
-    <form class="form-horizontal" role="form" method="POST" action="{{ url('/profile/basic') }}">
+    <form class="form-horizontal" role="form" method="POST" action="{{ url('/profile') }}">
         {{ csrf_field() }}
         {{ method_field('PATCH') }}
 

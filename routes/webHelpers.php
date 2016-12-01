@@ -12,16 +12,16 @@ class LoadRoutes {
 
     public static function profile() {
         Route::get("/profile", "ProfileController@basic");
-        Route::post("/profile", "ProfileController@basic");
+        Route::patch("/profile", "ProfileController@updateBasic");
 
         Route::get("/profile/password", "ProfileController@password");
-        Route::post("/profile/password", "ProfileController@password");
+        Route::patch("/profile/password", "ProfileController@updatePassword");
 
         Route::get("/profile/contact", "ProfileController@contact");
-        Route::post("/profile/contact", "ProfileController@contact");
+        Route::patch("/profile/contact", "ProfileController@updateContact");
 
         Route::get("/profile/vet", "ProfileController@vet");
-        Route::post("/profile/vet", "ProfileController@vet");
+        Route::patch("/profile/vet", "ProfileController@updateVet");
     }
 
     public static function pdf() {

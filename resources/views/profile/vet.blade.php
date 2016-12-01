@@ -4,7 +4,7 @@
 
     <div class="spacer"></div>
 
-    <form class="form-horizontal" role="form" method="POST" action="{{ url('/profile/contact') }}">
+    <form class="form-horizontal" role="form" method="POST" action="{{ url('/profile/vet') }}">
         {{ csrf_field() }}
         {{ method_field('PATCH') }}
 
@@ -12,7 +12,7 @@
             <label for="name" class="col-md-4 control-label">Name</label>
 
             <div class="col-md-6">
-                <input id="name" type="text" class="form-control" name="name" autofocus>
+                <input id="name" type="text" class="form-control" name="name" value="{{ Auth::user()->vet->name }}">
 
                 @if ($errors->has('name'))
                     <span class="help-block">
@@ -26,7 +26,7 @@
             <label for="phone" class="col-md-4 control-label">Phone number</label>
 
             <div class="col-md-6">
-                <input id="phone" type="text" class="form-control" name="phone" required autofocus>
+                <input id="phone" type="number" class="form-control" name="phone" value="{{ Auth::user()->vet->phone }}">
 
                 @if ($errors->has('phone'))
                     <span class="help-block">
@@ -40,7 +40,7 @@
             <label for="address" class="col-md-4 control-label">Address</label>
 
             <div class="col-md-6">
-                <input id="address" type="password" class="form-control" name="address">
+                <input id="address" type="text" class="form-control" name="address" value="{{ Auth::user()->vet->address }}">
 
                 @if ($errors->has('address'))
                     <span class="help-block">
@@ -54,7 +54,7 @@
             <label for="city" class="col-md-4 control-label">City</label>
 
             <div class="col-md-6">
-                <input id="city" type="password" class="form-control" name="city">
+                <input id="city" type="text" class="form-control" name="city" value="{{ Auth::user()->vet->city }}">
 
                 @if ($errors->has('city'))
                     <span class="help-block">
@@ -68,7 +68,7 @@
             <label for="zip" class="col-md-4 control-label">ZIP</label>
 
             <div class="col-md-6">
-                <input id="zip" type="password" class="form-control" name="zip">
+                <input id="zip" type="number" class="form-control" name="zip" value="{{ Auth::user()->vet->zip }}">
 
                 @if ($errors->has('zip'))
                     <span class="help-block">
@@ -82,7 +82,7 @@
             <label for="fax" class="col-md-4 control-label">Fax</label>
 
             <div class="col-md-6">
-                <input id="fax" type="password" class="form-control" name="fax">
+                <input id="fax" type="number" class="form-control" name="fax" value="{{ Auth::user()->vet->fax }}">
 
                 @if ($errors->has('fax'))
                     <span class="help-block">

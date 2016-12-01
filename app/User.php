@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Pet;
+use App\Vet;
+use App\UserContact;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'is_admin'
     ];
 
     /**
@@ -30,5 +32,13 @@ class User extends Authenticatable
 
     public function pets() {
         return $this->hasMany(Pet::class);
+    }
+
+    public function contact() {
+        return $this->hasOne(UserContact::class);
+    }
+
+    public function vet() {
+        return $this->hasOne(Vet::class);
     }
 }

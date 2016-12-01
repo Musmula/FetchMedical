@@ -51,7 +51,29 @@ class ProfileController extends Controller
         return view("profile.contact", ['active' => 'contact']);
     }
 
+    public function updateContact(Request $request) {
+        Auth::user()->contact->update($request->except(['_token', '_method']));
+        alert()->success('Contact information updated');
+        return redirect()->back();
+    }
+
     public function vet() {
         return view("profile.vet", ['active' => 'vet']);
+    }
+
+    public function updateVet(Request $request) {
+        Auth::user()->vet->update($request->except('_method', '_token'));
+        alert()->success('Vet information updated');
+        return redirect()->back();
+    }
+
+    public function nullify(array $subject) {
+        foreach ($subject as $key) {
+            if ($subject[$key] == "") {
+                $subject[$key] = null;
+            }
+        }
+
+        return $subject;
     }
 }

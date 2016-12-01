@@ -13,15 +13,15 @@
                                     <a href="{{ url('/pets/' . $pet->id) }}">
                                         {{ $pet->name }}
                                     </a>
-                                    <span class="pull-right">Queued for processing</span>
+                                    <span class="pull-right">{{ $pet->processed ? 'Up to date' : 'Queued for processing' }}</span>
                                     <div class="clearfix"></div>
                                 </li>
                             @endforeach()
-
-                            @else 
+                            
+                        @else 
                             <li class="list-group-item"><a href="{{ url('/pets/create') }}">You haven't registered any pets yet</a></li>
-                        </ul>
-                    @endif
+                        @endif
+                    </ul>
             </div> {{-- Panel end --}}
 
             <a class="btn btn-primary" href="{{ url('/pets/create') }}">

@@ -17,13 +17,18 @@ Route::get('/about', 'PagesController@about');
 
 Auth::routes();
 
-Route::get('/home', 'PetController@index');
-Route::get("/pets/{id}/request", "PetController@requestEdit");
-Route::post("/pets/{id}/request", "PetController@fireRequest");
-Route::resource('/pets/queue', 'PetQueueController');
-Route::resource('/pets', 'PetController');
-Route::resource('/records', 'RecordController');
-
+/*
+|--------------------------------------------------------------------------
+| LoadRoutes
+|--------------------------------------------------------------------------
+|
+| LoadRoutes is a facade located in this directory in the webHelpers file.
+| Composer is pulling that one in after which Laravel registers the facade
+|
+*/
+LoadRoutes::pets();
+LoadRoutes::profile();
+LoadRoutes::pdf();
 
 /*
 |--------------------------------------------------------------------------
@@ -42,9 +47,3 @@ Route::delete('/account', 'SettingsController@deleteAcc');
 Route::get("/users", "UserController@index");
 // Route::delete("/user/{id}", "UserController@destroy");
 Route::put("/user/{id}/ban", "UserController@ban");
-
-// 
-// 
-// 
-// Testing shit
-Route::get("/pets/{id}/pdf/{action}", "PDFController@PetProfile");

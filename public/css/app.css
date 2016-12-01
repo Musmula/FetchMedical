@@ -6729,4 +6729,7 @@ body.stop-scrolling {
 .panel, .panel-heading, .dropdown-menu, .btn, .alert, .form-control {
   border-radius: 0; }
 
+.spacer {
+  height: 40px; }
+
 /*# sourceMappingURL=app.css.map */

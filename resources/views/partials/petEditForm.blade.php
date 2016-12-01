@@ -24,7 +24,7 @@
         <label for="species" class="col-md-4 control-label">Species</label>
 
         <div class="col-md-6">
-        <select id="species" name="species" class="form-control" value="{{ old('species') }}" required>
+        <select id="species" name="species" class="form-control" value="{{ $pet->species }}" required>
                 <option>Cat</option>
                 <option>Dog</option>
             </select>
@@ -55,7 +55,7 @@
         <label for="color" class="col-md-4 control-label">Color</label>
 
         <div class="col-md-6">
-            <input id="color" type="text" class="form-control" name="color" value="{{ $pet->color }}" required>
+            <input id="color" type="text" class="form-control" name="color" value="{{ $pet->color }}">
 
             @if ($errors->has('color'))
                 <span class="help-block">
@@ -70,7 +70,7 @@
         <label for="gender" class="col-md-4 control-label">Gender</label>
 
         <div class="col-md-6">
-            <select id="gender" name="gender" class="form-control" value="{{ old('gender') }}" required>
+            <select id="gender" name="gender" class="form-control" value="{{ $pet->gender }}" required>
                 <option>Female</option>
                 <option>Male</option>
             </select>
@@ -78,6 +78,23 @@
             @if ($errors->has('gender'))
                 <span class="help-block">
                     <strong>{{ $errors->first('gender') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div> {{-- /gender --}}
+
+    <div class="form-group{{ $errors->has('processed') ? ' has-error' : '' }}">
+        <label for="processed" class="col-md-4 control-label">Has been processed</label>
+
+        <div class="col-md-6">
+            <select id="processed" name="processed" class="form-control" value="{{ old($pet->processed) }}" required>
+                <option value="1" {{ $pet->processed ? 'selected' : null }} >Yes</option>
+                <option value="0" {{ !$pet->processed ? 'selected' : null }}>No</option>
+            </select>
+
+            @if ($errors->has('processed'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('processed') }}</strong>
                 </span>
             @endif
         </div>

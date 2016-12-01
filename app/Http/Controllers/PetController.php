@@ -61,7 +61,8 @@ class PetController extends Controller
             'breed'     => $request->breed,
             'color'     => $request->color,
             'gender'    => $request->gender,
-            'notes'     => $request->notes
+            'notes'     => $request->notes,
+            
         ]);
 
         PetQueue::create([
@@ -123,6 +124,7 @@ class PetController extends Controller
         $pet = Pet::find($id);
         if ($this->hasPermission(Auth::user(), $pet)) {
             if (Auth::user()->is_admin) {
+                // return $request->processed;
                 $pet->update($request->except(['_token', '_method']));
             }
 

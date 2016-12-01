@@ -17,6 +17,7 @@ class Pet extends Model
         'breed',
         'color',
         'gender',
+        'processed',
         'notes',
 
     ];
@@ -36,5 +37,9 @@ class Pet extends Model
         }
 
         return $this->hasOne(DogRecord::class);
+    }
+
+    public function setProcessedAttribute($value) {
+        $this->attributes['processed'] = (boolean) $value;
     }
 }

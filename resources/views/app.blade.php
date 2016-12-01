@@ -121,7 +121,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ url('settings') }}">
+                                        <a href="{{ url('profile') }}">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                             Profile
                                         </a>

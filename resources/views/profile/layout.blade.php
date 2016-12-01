@@ -22,7 +22,7 @@
                 <div class="panel-body">
                     <ul class="nav nav-tabs">
                         <li role="presentation" class="{{ $active == 'basic' ? 'active' : null }}"><a href="{{ url('/profile') }}">Basic info</a></li>
-                        <li role="presentation" class="{{ $active == 'password' ? 'active' : null }}"><a href="{{ url('/profile/password') }}">Password change</a></li>
+                        <li role="presentation" class="{{ $active == 'password' ? 'active' : null }}"><a href="{{ url('/profile/password') }}">Change Password</a></li>
                         <li role="presentation" class="{{ $active == 'contact' ? 'active' : null }}"><a href="{{ url('/profile/contact') }}">Contact</a></li>
                         <li role="presentation" class="{{ $active == 'vet' ? 'active' : null }}"><a href="{{ url('/profile/vet') }}">Vet contact</a></li>
                     </ul>

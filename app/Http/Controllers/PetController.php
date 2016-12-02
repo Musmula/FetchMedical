@@ -125,17 +125,8 @@ class PetController extends Controller
         if ($this->hasPermission(Auth::user(), $pet)) {
             if (Auth::user()->is_admin) {
                 // return $request->processed;
-                if ($request->species == 'Cat' && $pet->species == 'Dog') {
-                    $pet->medicalRecords->delete();
-                    CatRecord::create([
-                        'pet_id' => $pet->id
-                    ]);
-                }
-
-                if ($request->species == 'Dog' && $pet->species == 'Cat') {
-                    DogRecord::create([
-                        'pet_id' => $pet->id
-                    ]);
+                if ($request->species != $pet->species) {
+                    swapSpecies($pet);
                 }
                 
                 $pet->update($request->except(['_token', '_method']));

@@ -93,11 +93,11 @@ class PetQueueController extends Controller
     public function destroy(Request $request, $id)
     {
         $queueItem = PetQueue::find($id);
-        if ($queueItem->type == 'Pet registration' || $request->processed) {
-            $pet = $queueItem->pet;
-            $pet->processed = 1;
-            $pet->save();
-        }
+        
+        if ($queueItem->type == 'Pet registration' || $request->allow_pet_status) 
+            $queueItem->pet->update(['processed' => 1]);
+        elseif (!$request->allow_pet_status)
+            $queueItem->pet->update(['processed' => 0]);
 
         $queueItem->delete();
         alert()->success('The queue item has been destroyed', 'Done');

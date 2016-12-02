@@ -22,7 +22,8 @@
             "database"
         ],
         "files": [
-            "routes/webHelpers.php"
+            "routes/webHelpers.php",
+            "app/helpers.php"
         ],
         "psr-4": {
             "App\\": "app/"

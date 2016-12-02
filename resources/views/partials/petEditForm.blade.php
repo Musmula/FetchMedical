@@ -25,8 +25,8 @@
 
         <div class="col-md-6">
         <select id="species" name="species" class="form-control" value="{{ $pet->species }}" required>
-                <option>Cat</option>
-                <option>Dog</option>
+                <option {{ $pet->species == 'Cat' ? 'selected' : null }}>Cat</option>
+                <option {{ $pet->species == 'Dog' ? 'selected' : null }}>Dog</option>
             </select>
 
             @if ($errors->has('species'))
@@ -71,8 +71,8 @@
 
         <div class="col-md-6">
             <select id="gender" name="gender" class="form-control" value="{{ $pet->gender }}" required>
-                <option>Female</option>
-                <option>Male</option>
+                <option {{ $pet->gender == 'Female' ? 'selected' : null }}>Female</option>
+                <option {{ $pet->gender == 'Male' ? 'selected' : null }}>Male</option>
             </select>
 
             @if ($errors->has('gender'))

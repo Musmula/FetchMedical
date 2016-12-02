@@ -66,14 +66,4 @@ class ProfileController extends Controller
         alert()->success('Vet information updated');
         return redirect()->back();
     }
-
-    public function nullify(array $subject) {
-        foreach ($subject as $key) {
-            if ($subject[$key] == "") {
-                $subject[$key] = null;
-            }
-        }
-
-        return $subject;
-    }
 }

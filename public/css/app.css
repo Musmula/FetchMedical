@@ -6727,6 +6727,12 @@ body.stop-scrolling {
 .panel, .panel-heading, .dropdown-menu, .btn, .alert, .form-control {
   border-radius: 0; }
 
+.sweet-alert button {
+  border-radius: 0; }
+
+.sweet-alert {
+  border-radius: 0; }
+
 .spacer {
   height: 40px; }
 

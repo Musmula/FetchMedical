@@ -15,7 +15,9 @@
 
 @import "button-dynamics";
 
+// Overrides
 @import "bootstrap-overrides";
+@import "sweetalert-overrides";
 
 .spacer {
     height: 40px;

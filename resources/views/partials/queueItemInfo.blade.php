@@ -2,12 +2,12 @@
     <li class="list-group-item">Name: {{ $item->name }}</li>
     <li class="list-group-item">Type: {{ $item->type }}</li>
     <li class="list-group-item">Message:
-        <textarea readonly rows="2" style="width: 100%; resize: vertical;" class="well-sm">{{ $item->message }}</textarea>
+        <textarea readonly rows="8" style="width: 100%; resize: vertical;" class="well-sm">{{ $item->message }}</textarea>
     </li>
-    <li class="list-group-item">Users name: {{ $user->name }}</li>
-    <li class="list-group-item">Users email: {{ $user->email }}</li>
-    <li class="list-group-item">Vet name: {{ $user->vet->name }}</li>
-    <li class="list-group-item">Vet phone number: {{ $user->vet->phone }}</li>
+    <li class="list-group-item">Users name: <a href="{{ url('/user/' . $user->id) }}">{{ $user->name }}</a></li>
+    <li class="list-group-item">Users email: <a href="{{ url('/user/' . $user->id) }}">{{ $user->email }}</a></li>
+    <li class="list-group-item">Vet name: {{ $user->vet->name == '' ? 'Not set' : $user->vet->name }}</li>
+    <li class="list-group-item">Vet phone number: {{ $user->vet->phone == '' ? 'Not set' : $user->vet->phone }}</li>
 </ul>
 
 @if($user->id != Auth::user()->id)

@@ -17,6 +17,10 @@ class UserController extends Controller
         return view("user.all", compact('users'));
     }
 
+    public function show($id) {
+        return view("user.show", ['user' => User::find($id)]);
+    }
+
     public function ban($id) {
         $target = User::find($id);
         DB::insert('insert into banned_users (id, name) values (?, ?)', [$id, $target->name]);

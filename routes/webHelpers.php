@@ -27,4 +27,11 @@ class LoadRoutes {
     public static function pdf() {
         Route::get("/pets/{id}/pdf/{action}", "PDFController@PetProfile");
     }
+
+    public static function users() {
+        Route::get("/users", "UserController@index");
+        // Route::delete("/user/{id}", "UserController@destroy");
+        Route::get('/user/{id}', "UserController@show");
+        Route::put("/user/{id}/ban", "UserController@ban");
+    }
 }

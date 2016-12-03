@@ -29,6 +29,7 @@ Auth::routes();
 LoadRoutes::pets();
 LoadRoutes::profile();
 LoadRoutes::pdf();
+LoadRoutes::users();
 
 /*
 |--------------------------------------------------------------------------
@@ -38,12 +39,3 @@ LoadRoutes::pdf();
 Route::get("/settings", "SettingsController@index");
 Route::post("/settings/basic", "SettingsController@updateBasicSettings");
 Route::delete('/account', 'SettingsController@deleteAcc');
-
-/*
-|--------------------------------------------------------------------------
-| The User management routes
-|--------------------------------------------------------------------------
-*/
-Route::get("/users", "UserController@index");
-// Route::delete("/user/{id}", "UserController@destroy");
-Route::put("/user/{id}/ban", "UserController@ban");

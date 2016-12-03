@@ -12,7 +12,7 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
-    public function basic() {
+    public function basic(Request $request) {
         return view("profile.basic", ['active' => 'basic']);
     }
 

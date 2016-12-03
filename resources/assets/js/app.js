@@ -18,3 +18,9 @@ require('./bootstrap');
 // const app = new Vue({
 //     el: '#app'
 // });
+
+$(document).ready(function() {
+    $("#gravatar-notice").find("button.close").on("click", function() {
+        document.cookie = "gravatar=dismissed"
+    });
+});

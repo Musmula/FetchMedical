@@ -9,12 +9,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
+            @if (!isset($_COOKIE['gravatar']))
+                <div class="alert alert-info alert-dismissible" id="gravatar-notice" role="alert">
+                    Want to change your profile picture?
+                    We pull those from <a href="https://en.gravatar.com/" target="_blank" class="alert-link">gravatar.com</a>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+            @endif
             
-            <div class="alert alert-info alert-dismissible" role="alert">
-                Want to change your profile picture?
-                We pull those from <a href="https://en.gravatar.com/" target="_blank" class="alert-link">gravatar.com</a>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
 
             <div class="panel panel-default">
                 <div class="panel-heading">Your basic account information</div>
@@ -33,8 +36,6 @@
 
                 </div>
             </div> {{-- Panel end --}}
-
-            <div class="spacer"></div>
 
             <div class="panel panel-danger">
                 <div class="panel-heading">Danger zone</div>

@@ -6730,10 +6730,13 @@ body.stop-scrolling {
 .sweet-alert button {
   border-radius: 0; }
 
-.sweet-alert {
-  border-radius: 0; }
-
 .spacer {
   height: 40px; }
+
+#logo {
+  display: inline;
+  height: 100%;
+  width: auto;
+  margin-right: 10px; }
 
 /*# sourceMappingURL=app.css.map */

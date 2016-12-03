@@ -42,7 +42,8 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        <img src="{{ url('img/logo.svg') }}" id="logo">
+                        {{ config('app.name', 'Fetch Medical') }}
                     </a>
                 </div>
 

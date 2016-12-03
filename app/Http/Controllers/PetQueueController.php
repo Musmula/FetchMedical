@@ -54,10 +54,10 @@ class PetQueueController extends Controller
     public function show($id)
     {
         $item = PetQueue::find($id);
-        $pet = $item->pet;
         return view("petQueue.show", [
             'item'  => $item,
-            'pet'   => $pet
+            'pet'   => $item->pet,
+            'user'  => $item->pet->user
         ]);
     }
 

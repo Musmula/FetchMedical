@@ -34,16 +34,16 @@
                 </div>
             </div> {{-- Panel end --}}
 
-            {{-- move this to settings --}}
-            
+            <div class="spacer"></div>
+
             <div class="panel panel-danger">
                 <div class="panel-heading">Danger zone</div>
                 <div class="panel-body">
                     <p>Once you delete your account, there is no going back. Please be certain.</p>
-                    <form method="POST" action="{{ url('/account') }}">
+                    <form method="POST" action="{{ url('/account') }}" id="dropAccountForm">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                        <button class="btn btn-danger">Delete my account</button>
+                        <button class="btn btn-danger" id="dropAcc">Delete my account</button>
                     </form>
                 </div>
             </div>
@@ -52,4 +52,26 @@
     </div>
 </div>
 
+@stop
+
+@section('foot')
+    <script>
+        document.getElementById("dropAcc").addEventListener("click", function(e) {
+            e.preventDefault();
+
+            swal({
+                title: "Are you sure?",
+                text: "This action cannot be undone",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#bf5329",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+                },
+                    function() {
+                        document.getElementById('dropAccountForm').submit();
+                    }
+                );
+        });
+    </script>
 @stop

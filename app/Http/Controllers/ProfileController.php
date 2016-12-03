@@ -66,4 +66,10 @@ class ProfileController extends Controller
         alert()->success('Vet information updated');
         return redirect()->back();
     }
+
+    public function deleteAcc() {
+        Auth::user()->delete();
+        alert()->success('Your account has been deleted');
+        return redirect('/');
+    }
 }

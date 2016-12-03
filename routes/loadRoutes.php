@@ -1,7 +1,23 @@
 <?php 
 
 class LoadRoutes {
-    public static function pets() {
+    public static function all() {
+        $router = new self;
+        $router->pets();
+        $router->profile();
+        $router->pdf();
+        $router->users();
+
+        return $router;
+    }
+
+    public static function load() {
+        $router = new self;
+
+        return $router;
+    }
+
+    public function pets() {
         Route::get('/home', 'PetController@index');
         Route::get("/pets/{id}/request", "PetController@requestEdit");
         Route::post("/pets/{id}/request", "PetController@fireRequest");
@@ -10,7 +26,7 @@ class LoadRoutes {
         Route::resource('/records', 'RecordController');
     }
 
-    public static function profile() {
+    public function profile() {
         Route::get("/profile", "ProfileController@basic");
         Route::patch("/profile", "ProfileController@updateBasic");
 
@@ -22,13 +38,15 @@ class LoadRoutes {
 
         Route::get("/profile/vet", "ProfileController@vet");
         Route::patch("/profile/vet", "ProfileController@updateVet");
+
+        Route::delete('/account', 'ProfileController@deleteAcc');
     }
 
-    public static function pdf() {
+    public function pdf() {
         Route::get("/pets/{id}/pdf/{action}", "PDFController@PetProfile");
     }
 
-    public static function users() {
+    public function users() {
         Route::get("/users", "UserController@index");
         // Route::delete("/user/{id}", "UserController@destroy");
         Route::get('/user/{id}', "UserController@show");

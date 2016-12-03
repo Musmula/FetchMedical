@@ -22,20 +22,9 @@ Auth::routes();
 | LoadRoutes
 |--------------------------------------------------------------------------
 |
-| LoadRoutes is a facade located in this directory in the webHelpers file.
-| Composer is pulling that one in after which Laravel registers the facade
+| This file was gettings way to bloated so I extracted most of the routes
+| to this class
 |
 */
-LoadRoutes::pets();
-LoadRoutes::profile();
-LoadRoutes::pdf();
-LoadRoutes::users();
 
-/*
-|--------------------------------------------------------------------------
-| The settings routes
-|--------------------------------------------------------------------------
-*/
-Route::get("/settings", "SettingsController@index");
-Route::post("/settings/basic", "SettingsController@updateBasicSettings");
-Route::delete('/account', 'SettingsController@deleteAcc');
+LoadRoutes::all();

@@ -131,13 +131,6 @@
                                     </li>
 
                                     <li>
-                                        <a href="{{ url('settings') }}">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>
-                                            Settings
-                                        </a>
-                                    </li>
-
-                                    <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -166,6 +159,8 @@
 
     @include('sweet::alert')
     @include('partials.analyticstracking')
+
+    @yield('foot')
     
 </body>
 </html>

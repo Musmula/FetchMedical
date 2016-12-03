@@ -1,6 +1,11 @@
 @extends('app')
 
 @section('content')
+
+<div class="container-fluid profile-pic-lg">
+    <img class="pet-pic" src="{{ url('/uploads/petImages/' . $pet->picture) }}">
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

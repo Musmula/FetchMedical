@@ -1,7 +1,23 @@
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/pets/' . $pet->id) }}">
+<form class="form-horizontal" role="form" enctype="multipart/form-data" method="POST" action="{{ url('/pets/' . $pet->id) }}">
 
     {{ method_field('PUT') }}
     {{ csrf_field() }}
+
+    <div class="form-group{{ $errors->has('picture') ? ' has-error' : '' }}">
+        <label for="picture" class="col-md-4 control-label">New picture</label>
+
+        <div class="col-md-6">
+            <span class="btn btn-default btn-file">
+                Browse <input type="file" name="picture">
+            </span>
+
+            @if ($errors->has('picture'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('picture') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div> {{-- /picture --}}
 
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
         <label for="name" class="col-md-4 control-label">Name</label>

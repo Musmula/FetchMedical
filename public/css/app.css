@@ -6706,17 +6706,37 @@ body.stop-scrolling {
 .fa-btn, .fa-conditional {
   margin-right: 7px; }
 
-#profile-pic-lg {
+.profile-pic-lg {
   text-align: center;
   margin-top: -40px;
   padding: 40px;
   margin-bottom: 20px;
   background: #3097D1 url("../img/admin-bg.svg") center/cover;
   background-attachment: fixed; }
-  #profile-pic-lg img {
+  .profile-pic-lg img {
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     border: 5px solid #fff;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3); }
+
+.btn-file {
+  position: relative;
+  overflow: hidden; }
+  .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block; }
 
 @media (max-width: 655px) {
   .fa-conditional {

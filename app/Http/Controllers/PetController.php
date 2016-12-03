@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Alert;
+use File;
+use Image;
 use App\Pet;
 use App\PetQueue;
 use App\CatRecord;
@@ -51,11 +53,21 @@ class PetController extends Controller
             'species'   => 'required',
             'breed'     => 'required',
             'gender'    => 'required',
-            
+            'picture'   => 'file'
+
         ]);
+
+        $filename = 'Default.jpg';
+
+        if ($request->hasFile('picture')) {
+            $picture = $request->file('picture');
+            $filename = time() . '.' . $picture->getClientOriginalExtension();
+            Image::make($picture)->fit(300)->save(public_path() . '/uploads/petImages/' . $filename);
+        }
 
         $pet = Pet::create([
             'user_id'   => Auth::user()->id,
+            'picture'   => $filename,
             'name'      => $request->name,
             'species'   => $request->species,
             'breed'     => $request->breed,
@@ -121,6 +133,11 @@ class PetController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name'      => 'required',
+            'picture'   => 'file'
+        ]);
+
         $pet = Pet::find($id);
         if ($this->hasPermission(Auth::user(), $pet)) {
             if (Auth::user()->is_admin) {
@@ -128,7 +145,7 @@ class PetController extends Controller
                 if ($request->species != $pet->species) {
                     swapSpecies($pet);
                 }
-                
+
                 $pet->update($request->except(['_token', '_method']));
             }
 
@@ -138,6 +155,17 @@ class PetController extends Controller
                 $pet->save();
             }
 
+            $filename = $pet->picture;
+
+            if ($request->hasFile('picture')) {
+                File::delete(public_path() . '/uploads/petImages/' . $pet->picture);
+                $picture = $request->file('picture');
+                $filename = time() . '.' . $picture->getClientOriginalExtension();
+                Image::make($picture)->fit(300)->save(public_path() . '/uploads/petImages/' . $filename);
+            }
+            $pet->picture = $filename;
+            $pet->save();
+            
             alert()->success('Pet information updated');
             return redirect()->back();
         }
@@ -153,6 +181,11 @@ class PetController extends Controller
     {
         $pet = Pet::find($id);
         if ($this->hasPermission(Auth::user(), $pet)) {
+            if ($pet->picture != "Default.jpg") {
+                unlink(public_path() . '/uploads/petImages/' . $pet->picture);
+                File::delete(public_path() . '/uploads/petImages/' . $pet->picture);
+            }
+
             $pet->delete();
             alert()->success('Pet records deleted');
             return redirect('/pets');

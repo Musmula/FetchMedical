@@ -30,7 +30,7 @@
 
 @section('content')
 
-<div class="container-fluid" id="profile-pic-lg">
+<div class="container-fluid profile-pic-lg">
     <img src="https://www.gravatar.com/avatar/{{ md5($user->email) }}?s=200&d=mm">
 </div>
 

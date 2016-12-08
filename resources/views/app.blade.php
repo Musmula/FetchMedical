@@ -41,7 +41,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ Auth::user() ? url('/home') : url('/') }}">
                         <img src="{{ url('img/logo.svg') }}" id="logo">
                         {{ config('app.name', 'Fetch Medical') }}
                     </a>

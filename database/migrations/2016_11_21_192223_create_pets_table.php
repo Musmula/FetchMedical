@@ -20,6 +20,7 @@ class CreatePetsTable extends Migration
             $table->string('name');
             $table->enum('species', ['Cat', 'Dog']);
             $table->string('breed')->nullable();
+            $table->enum('sex', ['Male', 'Neutered Male', 'Female', 'Spayed Female']);
             $table->string('color')->nullable();
             $table->enum('gender', ['Female', 'Male']);
             $table->text('notes')->nullable();

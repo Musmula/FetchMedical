@@ -1,0 +1,31 @@
+.pets {
+    .pet {
+
+        background: #fff;
+        text-align: center;
+        margin: 110px 0;
+        min-height: 200px;
+
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.18);
+        padding: 20px;
+        font-size: 1.1em;
+
+        img {
+            width: 200px;
+            border-radius: 50%;
+            max-width: 90%;
+            height: auto;
+            transform: translateY(-50%);
+
+            border: 2px solid $panel-default-border;
+            margin-bottom: -100px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    margin-bottom: -80px;
+}

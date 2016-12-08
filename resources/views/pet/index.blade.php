@@ -3,31 +3,29 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Registered pets:</div>
-                    <ul class="list-group">
-                        @if(count(Auth::user()->pets) > 0)
-                            @foreach(Auth::user()->pets as $pet)
-                                <li class="list-group-item">
-                                    <a href="{{ url('/pets/' . $pet->id) }}">
-                                        {{ $pet->name }}
-                                    </a>
-                                    <span class="pull-right">{{ $pet->processed ? 'Up to date' : 'Queued for processing' }}</span>
-                                    <div class="clearfix"></div>
-                                </li>
-                            @endforeach()
-                            
-                        @else 
-                            <li class="list-group-item"><a href="{{ url('/pets/create') }}">You haven't registered any pets yet</a></li>
-                        @endif
-                    </ul>
-            </div> {{-- Panel end --}}
+        <div class="col-md-6 col-md-offset-3">
 
-            <a class="btn btn-primary" href="{{ url('/pets/create') }}">
-                <i class="fa fa-plus fa-btn"></i>
-                Add
-            </a>
+                <div class="pets">
+                    @if(count(Auth::user()->pets) > 0)
+                        @foreach(Auth::user()->pets as $pet)
+                            
+                            <pet    url="{{ url('/pets/' . $pet->id) }}"
+                                    status="{{ $pet->status }}"
+                                    name={{ $pet->name }}
+                                    img="{{ url('/uploads/petImages/' . $pet->picture) }}">
+                            </pet>
+
+                        @endforeach
+                    @else 
+                        <a href="{{ url('/pets/create') }}">You haven't registered any pets yet</a>
+                    @endif
+                </div>
+
+                <a class="btn btn-primary" href="{{ url('/pets/create') }}">
+                    <i class="fa fa-plus fa-btn"></i>
+                    Add
+                </a>
+                </div>
 
         </div>
     </div>

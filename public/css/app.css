@@ -6711,8 +6711,8 @@ body.stop-scrolling {
   margin-top: -40px;
   padding: 40px;
   margin-bottom: 20px;
-  background: #3097D1 url("../img/admin-bg.svg") center/cover;
-  background-attachment: fixed; }
+  background: -webkit-linear-gradient(top left, #2a88bd, #5aacda);
+  background: linear-gradient(to bottom right, #2a88bd, #5aacda); }
   .profile-pic-lg img {
     width: 300px;
     max-width: 90%;
@@ -6738,6 +6738,29 @@ body.stop-scrolling {
     background: white;
     cursor: inherit;
     display: block; }
+
+.pets {
+  margin-bottom: -80px; }
+  .pets .pet {
+    background: #fff;
+    text-align: center;
+    margin: 110px 0;
+    min-height: 200px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.18);
+    padding: 20px;
+    font-size: 1.1em; }
+    .pets .pet img {
+      width: 200px;
+      border-radius: 50%;
+      max-width: 90%;
+      height: auto;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      border: 2px solid #d3e0e9;
+      margin-bottom: -100px; }
+    .pets .pet h2 {
+      margin-top: 0;
+      margin-bottom: 20px; }
 
 @media (max-width: 655px) {
   .fa-conditional {

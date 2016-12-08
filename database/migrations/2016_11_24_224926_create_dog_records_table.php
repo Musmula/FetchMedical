@@ -17,39 +17,49 @@ class CreateDogRecordsTable extends Migration
             $table->increments('id')->unsigned()->index();
             $table->integer('pet_id')->unsigned()->index();
 
-            $table->text('notes')->nullable();
             $table->integer('weight')->nullable();
             $table->date('weight_date')->nullable();
-            $table->string('microchip_co')->nullable();
+            
             $table->integer('microchip_id')->nullable();
-            $table->date('microchip_date')->nullable();
-            $table->string('rabies_co')->nullable();
-            $table->date('rabies_date')->nullable();
-            $table->string('fvrcp_manufacturer')->nullable();
-            $table->date('fvrcp_vaccine')->nullable();
-            $table->date('fvrcp_booster')->nullable();
-            $table->date('fvrcp_date')->nullable();
-            $table->text('other_vaccine')->nullable();
-            $table->string('deworming_medicine')->nullable();
-            $table->date('deworming_1')->nullable();
-            $table->date('deworming_2')->nullable();
-            $table->date('deworming_3')->nullable();
-            $table->string('flea_and_tick_medicine')->nullable();
-            $table->date('flea_and_tick_treatement')->nullable();
-            $table->text('flea_and_tick_notes')->nullable();
-            $table->string('heartworm_medicine')->nullable();
-            $table->date('heartworm_treatement')->nullable();
-            $table->text('heartworm_notes')->nullable();
-            $table->string('spay_neuter_clinic')->nullable();
-            $table->date('spay_neuter_date')->nullable();
-            $table->text('diet')->nullable();
+            $table->string('microchip_co')->nullable();
+            
+            $table->string('insurrance_policy')->nullable();
+            $table->string('insurrance_co')->nullable();
+            
             $table->text('conditions')->nullable();
+
+            $table->date('rabies_date')->nullable();
+            $table->string('rabies_co')->nullable();
+            
+            $table->date('fecal_test')->nullable();
+            $table->enum('fecal_test_results', ['Negative', 'Positive'])->nullable();
+
+            $table->date('dental_date')->nullable();
             $table->text('dental_notes')->nullable();
-            $table->text('history')->nullable();
-            $table->date('shelter_release_date')->nullable();
-            $table->string('foster')->nullable();
-            $table->string('adopter')->nullable();
-            $table->date('adopted')->nullable();
+            
+            $table->text('other_vaccine')->nullable();
+            $table->text('other_vaccine_date')->nullable();
+            $table->text('other_vaccine_notes')->nullable();
+
+            $table->string('vet_certificates_filename')->nullable();
+
+            $table->text('notes')->nullable();
+            $table->string('notes_filename')->nullable();
+
+            $table->date('dhpp_vaccine')->nullable();
+            $table->string('dhpp_vendor')->nullable();
+
+            $table->date('bordetella_vaccine')->nullable();
+            $table->string('bordetella_vendor')->nullable();
+
+            $table->date('corona_vaccine')->nullable();
+            $table->string('corona_vendor')->nullable();
+
+            $table->date('parvo_vaccine')->nullable();
+            $table->string('parvo_vendor')->nullable();
+
+            $table->date('heartworm_test')->nullable();
+            $table->enum('heartworm_test_results', ['Negative', 'Positive'])->nullable();
 
             $table->foreign('pet_id')
                   ->references('id')->on('pets')

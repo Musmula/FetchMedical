@@ -3,8 +3,9 @@
     margin-top: -40px;
     padding: 40px;
     margin-bottom: 20px;
-    background: $brand-primary url('../img/admin-bg.svg') center / cover;
-    background-attachment: fixed;
+    // background: $brand-primary url('../img/admin-bg.svg') center / cover;
+    // background-attachment: fixed;
+    background: linear-gradient(to bottom right, darken($brand-primary, 5%),lighten($brand-primary, 10%));
 
         img {
             width: 300px;

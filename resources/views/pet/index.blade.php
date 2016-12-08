@@ -10,7 +10,7 @@
                         @foreach(Auth::user()->pets as $pet)
                             
                             <pet    url="{{ url('/pets/' . $pet->id) }}"
-                                    status="{{ $pet->status }}"
+                                    status="{{ $pet->processed ? 'Up to date' : 'Queued for processing' }}"
                                     name={{ $pet->name }}
                                     img="{{ url('/uploads/petImages/' . $pet->picture) }}">
                             </pet>

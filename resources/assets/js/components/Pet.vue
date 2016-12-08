@@ -17,11 +17,19 @@
             </a>
         </div>
 
+        <i class="fa fa-refresh" title="Queued for processing" v-show="displayStatus"></i>
+
     </div>
 </template>
 
 <script>
     export default {
-        props: ['name', 'url', 'status', 'img']
+        props: ['name', 'url', 'status', 'img'],
+
+        computed: {
+            displayStatus() {
+                return this.status == 'Queued for processing' ? true : false;
+            }
+        }
     }
 </script>

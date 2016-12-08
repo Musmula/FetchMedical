@@ -6748,7 +6748,8 @@ body.stop-scrolling {
     min-height: 200px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.18);
     padding: 20px;
-    font-size: 1.1em; }
+    font-size: 1.1em;
+    position: relative; }
     .pets .pet img {
       width: 200px;
       border-radius: 50%;
@@ -6761,6 +6762,10 @@ body.stop-scrolling {
     .pets .pet h2 {
       margin-top: 0;
       margin-bottom: 20px; }
+    .pets .pet .fa.fa-refresh {
+      position: absolute;
+      top: 10px;
+      right: 10px; }
 
 @media (max-width: 655px) {
   .fa-conditional {

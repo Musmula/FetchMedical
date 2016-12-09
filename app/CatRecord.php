@@ -9,8 +9,8 @@ class CatRecord extends Model
 {
     protected $fillable = [
         'pet_id',
-        'fvrcP_vaccine',
-        'fvrcP_vendor',
+        'fvrcp_vaccine',
+        'fvrcp_vendor',
         'felv_vaccine',
         'felv_vendor',
         'fip_vaccine',

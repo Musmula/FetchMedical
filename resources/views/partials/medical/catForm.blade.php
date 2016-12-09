@@ -1,7 +1,7 @@
 @include('partials.medical.common')
 
 <div class='form-group{{ $errors->has('fvrcp_vaccine') ? ' has-error' : '' }}'>
-    <label for='fvrcp_vaccine' class='col-md-4 control-label'>fvrcp_vaccine</label>
+    <label for='fvrcp_vaccine' class='col-md-4 control-label'>FVRCP vaccine</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='fvrcp_vaccine' id='fvrcp_vaccine' value="{{ $records->fvrcp_vaccine }}">
@@ -15,7 +15,7 @@
 </div> {{-- /fvrcp_vaccine --}}
 
 <div class="form-group{{ $errors->has('fvrcp_vendor') ? ' has-error' : '' }}">
-    <label for="fvrcp_vendor" class="col-md-4 control-label">fvrcp_vendor</label>
+    <label for="fvrcp_vendor" class="col-md-4 control-label">FVRCP vendor</label>
 
     <div class="col-md-6">
 
@@ -34,7 +34,7 @@
 </div> {{-- /fvrcp_vendor --}}
 
 <div class='form-group{{ $errors->has('felv_vaccine') ? ' has-error' : '' }}'>
-    <label for='felv_vaccine' class='col-md-4 control-label'>felv_vaccine</label>
+    <label for='felv_vaccine' class='col-md-4 control-label'>FELV vaccine</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='felv_vaccine' id='felv_vaccine' value="{{ $records->felv_vaccine }}">
@@ -48,7 +48,7 @@
 </div> {{-- /felv_vaccine --}}
 
 <div class="form-group{{ $errors->has('felv_vendor') ? ' has-error' : '' }}">
-    <label for="felv_vendor" class="col-md-4 control-label">felv_vendor</label>
+    <label for="felv_vendor" class="col-md-4 control-label">FELV vendor</label>
 
     <div class="col-md-6">
 
@@ -67,7 +67,7 @@
 </div> {{-- /felv_vendor --}}
 
 <div class='form-group{{ $errors->has('fip_vaccine') ? ' has-error' : '' }}'>
-    <label for='fip_vaccine' class='col-md-4 control-label'>fip_vaccine</label>
+    <label for='fip_vaccine' class='col-md-4 control-label'>FIP vaccine</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='fip_vaccine' id='fip_vaccine' value="{{ $records->fip_vaccine }}">
@@ -81,7 +81,7 @@
 </div> {{-- /fip_vaccine --}}
 
 <div class="form-group{{ $errors->has('fip_vendor') ? ' has-error' : '' }}">
-    <label for="fip_vendor" class="col-md-4 control-label">fip_vendor</label>
+    <label for="fip_vendor" class="col-md-4 control-label">FIP vendor</label>
 
     <div class="col-md-6">
 
@@ -100,7 +100,7 @@
 </div> {{-- /fip_vendor --}}
 
 <div class='form-group{{ $errors->has('leukemia_test') ? ' has-error' : '' }}'>
-    <label for='leukemia_test' class='col-md-4 control-label'>leukemia_test</label>
+    <label for='leukemia_test' class='col-md-4 control-label'>Leukemia test</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='leukemia_test' id='leukemia_test' value="{{ $records->leukemia_test }}">
@@ -114,7 +114,7 @@
 </div> {{-- /leukemia_test --}}
 
 <div class="form-group{{ $errors->has('leukemia_test_results') ? ' has-error' : '' }}">
-    <label for="leukemia_test_results" class="col-md-4 control-label">leukemia_test_results</label>
+    <label for="leukemia_test_results" class="col-md-4 control-label">Leukemia test results</label>
 
     <div class="col-md-6">
 

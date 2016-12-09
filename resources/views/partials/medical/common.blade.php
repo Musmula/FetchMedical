@@ -13,7 +13,7 @@
 </div> {{-- /weight --}}
 
 <div class="form-group{{ $errors->has('weight_date') ? ' has-error' : '' }}">
-    <label for="weight_date" class="col-md-4 control-label">Weight_date</label>
+    <label for="weight_date" class="col-md-4 control-label">Weighting date</label>
 
     <div class="col-md-6">
         <input type="date" class="form-control" name="weight_date" id="weight_date" value="{{ $generalRecords->weight_date}}">
@@ -27,7 +27,7 @@
 </div> {{-- /weight_date --}}
 
 <div class="form-group{{ $errors->has('microchip_id') ? ' has-error' : '' }}">
-    <label for="microchip_id" class="col-md-4 control-label">microchip_id</label>
+    <label for="microchip_id" class="col-md-4 control-label">Microchip #</label>
 
     <div class="col-md-6">
         <input type="number" class="form-control" name="microchip_id" id="microchip_id" value="{{ $generalRecords->microchip_id}}">
@@ -41,10 +41,14 @@
 </div> {{-- /microchip_id --}}
 
 <div class="form-group{{ $errors->has('microchip_vendor') ? ' has-error' : '' }}">
-    <label for="microchip_vendor" class="col-md-4 control-label">microchip_vendor</label>
+    <label for="microchip_vendor" class="col-md-4 control-label">Microchip vendor</label>
 
     <div class="col-md-6">
-        <input type="date" class="form-control" name="microchip_vendor" id="microchip_vendor" value="{{ $generalRecords->microchip_vendor}}">
+    <select class="form-control" name="microchip_vendor" id="microchip_vendor">
+            <option>Vendor 1</option>
+            <option>Vendor 2</option>
+            <option>Vendor 3</option>
+        </select>
 
         @if ($errors->has('microchip_vendor'))
             <span class="help-block">
@@ -55,7 +59,7 @@
 </div> {{-- /microchip_vendor --}}
 
 <div class="form-group{{ $errors->has('insurrance_policy') ? ' has-error' : '' }}">
-    <label for="insurrance_policy" class="col-md-4 control-label">insurrance_policy</label>
+    <label for="insurrance_policy" class="col-md-4 control-label">Insurrance policy</label>
 
     <div class="col-md-6">
         <input type="text" class="form-control" name="insurrance_policy" id="insurrance_policy" value="{{ $generalRecords->insurrance_policy}}">
@@ -69,7 +73,7 @@
 </div> {{-- /insurrance_policy --}}
 
 <div class="form-group{{ $errors->has('insurrance_co') ? ' has-error' : '' }}">
-    <label for="insurrance_co" class="col-md-4 control-label">insurrance_vendor</label>
+    <label for="insurrance_co" class="col-md-4 control-label">Insurrance vendor</label>
 
     <div class="col-md-6">
 
@@ -88,7 +92,7 @@
 </div> {{-- /insurrance_co --}}
 
 <div class='form-group{{ $errors->has('conditions') ? ' has-error' : '' }}'>
-    <label for='conditions' class='col-md-4 control-label'>conditions</label>
+    <label for='conditions' class='col-md-4 control-label'>Known conditions</label>
 
     <div class='col-md-6'>
         <textarea id='conditions' class='form-control' name='conditions' style='resize: vertical;' rows='4'>{{ $generalRecords->conditions }}</textarea>
@@ -102,7 +106,7 @@
 </div> {{-- /conditions --}}
 
 <div class='form-group{{ $errors->has('rabies') ? ' has-error' : '' }}'>
-    <label for='rabies' class='col-md-4 control-label'>rabies</label>
+    <label for='rabies' class='col-md-4 control-label'>Rabies</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='rabies' id='rabies' value="{{ $generalRecords->rabies }}">
@@ -116,7 +120,7 @@
 </div> {{-- /rabies --}}
 
 <div class='form-group{{ $errors->has('rabies_co') ? ' has-error' : '' }}'>
-    <label for='rabies_co' class='col-md-4 control-label'>rabies_co</label>
+    <label for='rabies_co' class='col-md-4 control-label'>Rabies co</label>
 
     <div class='col-md-6'>
         <input type='text' class='form-control' name='rabies_co' id='rabies_co' value="{{ $generalRecords->rabies_co }}">
@@ -129,22 +133,22 @@
     </div>
 </div> {{-- /rabies_co --}}
 
-<div class='form-group{{ $errors->has('fecal-test') ? ' has-error' : '' }}'>
-    <label for='fecal-test' class='col-md-4 control-label'>fecal-test</label>
+<div class='form-group{{ $errors->has('fecal_test') ? ' has-error' : '' }}'>
+    <label for='fecal_test' class='col-md-4 control-label'>Fecal test</label>
 
     <div class='col-md-6'>
-        <input type='date' class='form-control' name='fecal-test' id='fecal-test' value="{{ $generalRecords->fecal_test }}">
+        <input type='date' class='form-control' name='fecal_test' id='fecal_test' value="{{ $generalRecords->fecal_test }}">
 
-        @if ($errors->has('fecal-test'))
+        @if ($errors->has('fecal_test'))
             <span class='help-block'>
-                <strong>{{ $errors->first('fecal-test') }}</strong>
+                <strong>{{ $errors->first('fecal_test') }}</strong>
             </span>
         @endif
     </div>
-</div> {{-- /fecal-test --}}
+</div> {{-- /fecal_test --}}
 
 <div class='form-group{{ $errors->has('fecal_test_results') ? ' has-error' : '' }}'>
-    <label for='fecal_test_results' class='col-md-4 control-label'>fecal_test_results</label>
+    <label for='fecal_test_results' class='col-md-4 control-label'>Fecal test results</label>
 
     <div class='col-md-6'>
         <select name='fecal_test_results' class='form-control' id=fecal_test_results>
@@ -161,7 +165,7 @@
 </div> {{-- /fecal_test_results --}}
 
 <div class='form-group{{ $errors->has('dental_date') ? ' has-error' : '' }}'>
-    <label for='dental_date' class='col-md-4 control-label'>dental_date</label>
+    <label for='dental_date' class='col-md-4 control-label'>Dental date</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='dental_date' id='dental_date' value="{{ $generalRecords->fecal_test }}">
@@ -175,7 +179,7 @@
 </div> {{-- /dental_date --}}
 
 <div class='form-group{{ $errors->has('dental_notes') ? ' has-error' : '' }}'>
-    <label for='dental_notes' class='col-md-4 control-label'>dental_notes</label>
+    <label for='dental_notes' class='col-md-4 control-label'>Dental notes</label>
 
     <div class='col-md-6'>
         <textarea id='dental_notes' class='form-control' name='dental_notes' style='resize: vertical;' rows='4'>{{ $generalRecords->dental_notes }}</textarea>
@@ -189,7 +193,7 @@
 </div> {{-- /dental_notes --}}
 
 <div class='form-group{{ $errors->has('other_vaccine') ? ' has-error' : '' }}'>
-    <label for='other_vaccine' class='col-md-4 control-label'>other_vaccine</label>
+    <label for='other_vaccine' class='col-md-4 control-label'>Other vaccine</label>
 
     <div class='col-md-6'>
         <textarea id='other_vaccine' class='form-control' name='other_vaccine' style='resize: vertical;' rows='4'>{{ $generalRecords->other_vaccine }}</textarea>
@@ -203,7 +207,7 @@
 </div> {{-- /other_vaccine --}}
 
 <div class='form-group{{ $errors->has('other_vaccine_date') ? ' has-error' : '' }}'>
-    <label for='other_vaccine_date' class='col-md-4 control-label'>other_vaccine_date</label>
+    <label for='other_vaccine_date' class='col-md-4 control-label'>Other vaccine date</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='other_vaccine_date' id='other_vaccine_date' value="{{ $generalRecords->other_vaccine_date }}">
@@ -217,7 +221,7 @@
 </div> {{-- /other_vaccine_date --}}
 
 <div class='form-group{{ $errors->has('other_vaccine_notes') ? ' has-error' : '' }}'>
-    <label for='other_vaccine_notes' class='col-md-4 control-label'>other_vaccine_notes</label>
+    <label for='other_vaccine_notes' class='col-md-4 control-label'>Other vaccine notes</label>
 
     <div class='col-md-6'>
         <textarea id='other_vaccine_notes' class='form-control' name='other_vaccine_notes' style='resize: vertical;' rows='4'>{{ $generalRecords->other_vaccine_notes }}</textarea>
@@ -245,10 +249,10 @@
 </div> {{-- /vet_certificate_file --}}
 
 <div class='form-group{{ $errors->has('notes') ? ' has-error' : '' }}'>
-    <label for='notes' class='col-md-4 control-label'>notes</label>
+    <label for='notes' class='col-md-4 control-label'>Notes</label>
 
     <div class='col-md-6'>
-        <input type='text' class='form-control' name='notes' id='notes' value="{{ $generalRecords->notes }}">
+    <textarea id='notes' class='form-control' name='notes' style='resize: vertical;' rows='4'>{{ $generalRecords->notes }}</textarea>
 
         @if ($errors->has('notes'))
             <span class='help-block'>
@@ -259,7 +263,7 @@
 </div> {{-- /notes --}}
 
 <div class='form-group{{ $errors->has('notes_file') ? ' has-error' : '' }}'>
-    <label for='notes_file' class='col-md-4 control-label'>notes_file</label>
+    <label for='notes_file' class='col-md-4 control-label'>Notes file</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='notes_file' id='notes_file' value="{{ $generalRecords->notes_file }}">

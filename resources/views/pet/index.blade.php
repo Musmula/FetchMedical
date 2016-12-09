@@ -11,7 +11,7 @@
                             
                             <pet    url="{{ url('/pets/' . $pet->id) }}"
                                     status="{{ $pet->processed ? 'Up to date' : 'Queued for processing' }}"
-                                    name={{ $pet->name }}
+                                    name='{{ $pet->name }}'
                                     img="{{ url('/uploads/petImages/' . $pet->picture) }}">
                             </pet>
 

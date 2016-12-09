@@ -91,7 +91,21 @@
                     </div>
 
                     <div class="panel-body">
-                        All the things
+                        
+                        <div class="panel panel-info">
+                            <div class="panel-heading">General information</div>
+                            @include('partials.medical.display.info')
+                        </div>
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Medical information</div>
+                            @if ($pet->species == 'Dog')
+                                @include('partials.medical.display.dog-medical')
+                            @else
+                                @include('partials.medical.display.cat-medical')
+                            @endif
+                        </div>
+
                     </div>
                 </div>
 

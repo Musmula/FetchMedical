@@ -84,9 +84,11 @@ class RecordController extends Controller
             }
         }
         $pet = Pet::find($request->pet_id);
-        $records = $pet->medicalRecords;
+        $generalRecords = $pet->info;
+        $medicalRecords = $pet->medicalRecords;
 
-        $records->update($data);
+        $medicalRecords->update($data);
+        $generalRecords->update($data);
         alert()->success('Medical records updated');
         return redirect()->back();
     }

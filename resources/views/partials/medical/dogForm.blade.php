@@ -1,7 +1,7 @@
 @include('partials.medical.common')
 
 <div class='form-group{{ $errors->has('dhpp_vaccine') ? ' has-error' : '' }}'>
-    <label for='dhpp_vaccine' class='col-md-4 control-label'>dhpp_vaccine</label>
+    <label for='dhpp_vaccine' class='col-md-4 control-label'>DHPP vaccine</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='dhpp_vaccine' id='dhpp_vaccine' value="{{ $records->dhpp_vaccine }}">
@@ -15,7 +15,7 @@
 </div> {{-- /dhpp_vaccine --}}
 
 <div class="form-group{{ $errors->has('dhpp_vendor') ? ' has-error' : '' }}">
-    <label for="dhpp_vendor" class="col-md-4 control-label">dhpp_vendor</label>
+    <label for="dhpp_vendor" class="col-md-4 control-label">DHPP vendor</label>
 
     <div class="col-md-6">
 
@@ -34,7 +34,7 @@
 </div> {{-- /dhpp_vendor --}}
 
 <div class='form-group{{ $errors->has('bordetella_vaccine') ? ' has-error' : '' }}'>
-    <label for='bordetella_vaccine' class='col-md-4 control-label'>bordetella_vaccine</label>
+    <label for='bordetella_vaccine' class='col-md-4 control-label'>Bordetella vaccine</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='bordetella_vaccine' id='bordetella_vaccine' value="{{ $records->bordetella_vaccine }}">
@@ -48,7 +48,7 @@
 </div> {{-- /bordetella_vaccine --}}
 
 <div class="form-group{{ $errors->has('bordetella_vendor') ? ' has-error' : '' }}">
-    <label for="bordetella_vendor" class="col-md-4 control-label">bordetella_vendor</label>
+    <label for="bordetella_vendor" class="col-md-4 control-label">Bordetella vendor</label>
 
     <div class="col-md-6">
 
@@ -67,7 +67,7 @@
 </div> {{-- /bordetella_vendor --}}
 
 <div class='form-group{{ $errors->has('corona_vaccine') ? ' has-error' : '' }}'>
-    <label for='corona_vaccine' class='col-md-4 control-label'>corona_vaccine</label>
+    <label for='corona_vaccine' class='col-md-4 control-label'>Corona vaccine</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='corona_vaccine' id='corona_vaccine' value="{{ $records->corona_vaccine }}">
@@ -81,7 +81,7 @@
 </div> {{-- /corona_vaccine --}}
 
 <div class="form-group{{ $errors->has('corona_vendor') ? ' has-error' : '' }}">
-    <label for="corona_vendor" class="col-md-4 control-label">corona_vendor</label>
+    <label for="corona_vendor" class="col-md-4 control-label">Corona vendor</label>
 
     <div class="col-md-6">
 
@@ -100,7 +100,7 @@
 </div> {{-- /corona_vendor --}}
 
 <div class='form-group{{ $errors->has('parvo_vaccine') ? ' has-error' : '' }}'>
-    <label for='parvo_vaccine' class='col-md-4 control-label'>parvo_vaccine</label>
+    <label for='parvo_vaccine' class='col-md-4 control-label'>Parvo vaccine</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='parvo_vaccine' id='parvo_vaccine' value="{{ $records->parvo_vaccine }}">
@@ -114,7 +114,7 @@
 </div> {{-- /parvo_vaccine --}}
 
 <div class="form-group{{ $errors->has('parvo_vendor') ? ' has-error' : '' }}">
-    <label for="parvo_vendor" class="col-md-4 control-label">parvo_vendor</label>
+    <label for="parvo_vendor" class="col-md-4 control-label">Parvo vendor</label>
 
     <div class="col-md-6">
 
@@ -133,7 +133,7 @@
 </div> {{-- /parvo_vendor --}}
 
 <div class='form-group{{ $errors->has('heartworm_test') ? ' has-error' : '' }}'>
-    <label for='heartworm_test' class='col-md-4 control-label'>heartworm_test</label>
+    <label for='heartworm_test' class='col-md-4 control-label'>Heartworm test</label>
 
     <div class='col-md-6'>
         <input type='date' class='form-control' name='heartworm_test' id='heartworm_test' value="{{ $records->heartworm_test }}">
@@ -147,7 +147,7 @@
 </div> {{-- /heartworm_test --}}
 
 <div class="form-group{{ $errors->has('heartworm_test_results') ? ' has-error' : '' }}">
-    <label for="heartworm_test_results" class="col-md-4 control-label">heartworm_test_results</label>
+    <label for="heartworm_test_results" class="col-md-4 control-label">Heartworm test results</label>
 
     <div class="col-md-6">
 

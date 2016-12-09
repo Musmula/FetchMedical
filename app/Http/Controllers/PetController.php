@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Alert;
 use File;
+use Alert;
 use Image;
 use App\Pet;
 use App\PetQueue;
 use App\CatRecord;
 use App\DogRecord;
+use App\AgnosticInfo;
 use Illuminate\Http\Request;
 use UxWeb\SweetAlert\SweetAlert;
 use Illuminate\Support\Facades\Auth;
@@ -84,6 +85,9 @@ class PetController extends Controller
             'message'   => 'This action has been triggered automatically when the pet was registered. Please fill in the medical records for this pet for the first time.',
         ]);
 
+        // Make 'em medical records
+        AgnosticInfo::create(['pet_id' => $pet->id]);
+
         if ($pet->species == 'Cat') {
             CatRecord::create(['pet_id' => $pet->id]);
         }
@@ -91,6 +95,7 @@ class PetController extends Controller
         else {
             DogRecord::create(['pet_id' => $pet->id]);
         }
+        // End of medical records
 
         Alert::success('Our team has been notified of the registration and they will fill in the medical records your vet provides them with as soon as possible', 'Pet registered successfully')->persistent('Ok');
         return redirect('/home');

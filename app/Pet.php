@@ -6,6 +6,7 @@ use App\User;
 use App\PetQueue;
 use App\CatRecord;
 use App\DogRecord;
+use App\AgnosticInfo;
 use Illuminate\Database\Eloquent\Model;
 
 class Pet extends Model
@@ -42,5 +43,9 @@ class Pet extends Model
 
     public function setProcessedAttribute($value) {
         $this->attributes['processed'] = (boolean) $value;
+    }
+
+    public function info() {
+        return $this->hasOne(AgnosticInfo::class);
     }
 }

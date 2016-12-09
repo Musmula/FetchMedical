@@ -17,9 +17,7 @@
                             <label for="picture" class="col-md-4 control-label">Picture</label>
 
                             <div class="col-md-6">
-                                <span class="btn btn-default btn-file">
-                                    Browse <input type="file" name="picture">
-                                </span>
+                                <input type="file" class="form-control" name="picture">
 
                                 @if ($errors->has('picture'))
                                     <span class="help-block">

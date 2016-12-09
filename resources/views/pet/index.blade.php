@@ -17,7 +17,7 @@
 
                         @endforeach
                     @else 
-                        <a href="{{ url('/pets/create') }}">You haven't registered any pets yet</a>
+                        <a style="display: inline-block; margin-bottom: 100px" href="{{ url('/pets/create') }}">You haven't registered any pets yet</a>
                     @endif
                 </div>
 
@@ -25,8 +25,6 @@
                     <i class="fa fa-plus fa-btn"></i>
                     Add
                 </a>
-                </div>
-
         </div>
     </div>
 </div>

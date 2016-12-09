@@ -25,7 +25,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Medical records</div>
                 <div class="panel-body">
-                    @include('partials.petMedicalRecords', ['records' => $pet->medicalRecords])
+                    @include('partials.petMedicalRecords', ['records' => $pet->medicalRecords, 'generalRecords' => $pet->info])
                 </div>
             </div> {{-- Panel end --}}
         </div>

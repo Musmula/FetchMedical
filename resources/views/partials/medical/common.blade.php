@@ -40,23 +40,23 @@
     </div>
 </div> {{-- /microchip_id --}}
 
-<div class="form-group{{ $errors->has('microchip_vendor') ? ' has-error' : '' }}">
-    <label for="microchip_vendor" class="col-md-4 control-label">Microchip vendor</label>
+<div class="form-group{{ $errors->has('microchip_co') ? ' has-error' : '' }}">
+    <label for="microchip_co" class="col-md-4 control-label">Microchip vendor</label>
 
     <div class="col-md-6">
-    <select class="form-control" name="microchip_vendor" id="microchip_vendor">
+    <select class="form-control" name="microchip_co" id="microchip_co">
             <option>Vendor 1</option>
             <option>Vendor 2</option>
             <option>Vendor 3</option>
         </select>
 
-        @if ($errors->has('microchip_vendor'))
+        @if ($errors->has('microchip_co'))
             <span class="help-block">
-                <strong>{{ $errors->first('microchip_vendor') }}</strong>
+                <strong>{{ $errors->first('microchip_co') }}</strong>
             </span>
         @endif
     </div>
-</div> {{-- /microchip_vendor --}}
+</div> {{-- /microchip_co --}}
 
 <div class="form-group{{ $errors->has('insurrance_policy') ? ' has-error' : '' }}">
     <label for="insurrance_policy" class="col-md-4 control-label">Insurrance policy</label>

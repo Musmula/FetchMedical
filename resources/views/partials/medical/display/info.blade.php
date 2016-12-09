@@ -11,7 +11,7 @@
 
     <tr>
         <td>
-            weight_date
+            Weight date
         </td>
         <td>
             {{ $info->weight_date }}
@@ -20,7 +20,7 @@
     
     <tr>
         <td>
-            microchip_id
+            Microchip #
         </td>
         <td>
             {{ $info->microchip_id }}
@@ -29,7 +29,7 @@
     
     <tr>
         <td>
-            microchip_co
+            Microchip vendor
         </td>
         <td>
             {{ $info->microchip_co }}
@@ -38,7 +38,7 @@
     
     <tr>
         <td>
-            insurrance_policy
+            Insurrance policy
         </td>
         <td>
             {{ $info->insurrance_policy }}
@@ -47,7 +47,7 @@
     
     <tr>
         <td>
-            insurrance_co
+            Insurrance company
         </td>
         <td>
             {{ $info->insurrance_co }}
@@ -56,25 +56,16 @@
     
     <tr>
         <td>
-            conditions
+            Conditions
         </td>
         <td>
-            {{ $info->conditions }}
-        </td>
-    </tr>
-    
-    <tr>
-        <td>
-            conditions
-        </td>
-        <td>
-            {{ $info->conditions }}
+            <textarea readonly class="display" rows="4">{{ $info->conditions }}</textarea>
         </td>
     </tr>
     
     <tr>
         <td>
-            rabies_date
+            Rabies date
         </td>
         <td>
             {{ $info->rabies_date }}
@@ -83,7 +74,7 @@
     
     <tr>
         <td>
-            rabies_co
+            Rabies company
         </td>
         <td>
             {{ $info->rabies_co }}
@@ -92,7 +83,7 @@
         
     <tr>
         <td>
-            fecal_test
+            Fecal test
         </td>
         <td>
             {{ $info->fecal_test }}
@@ -101,7 +92,7 @@
         
     <tr>
         <td>
-            fecal_test_results
+            Fecal test results
         </td>
         <td>
             {{ $info->fecal_test_results }}
@@ -110,7 +101,7 @@
         
     <tr>
         <td>
-            dental_date
+            Dental date
         </td>
         <td>
             {{ $info->dental_date }}
@@ -119,16 +110,16 @@
         
     <tr>
         <td>
-            dental_notes
+            Dental notes
         </td>
         <td>
-            {{ $info->dental_notes }}
+            <textarea readonly class="display" rows="4">{{ $info->dental_notes }}</textarea>
         </td>
     </tr>
         
     <tr>
         <td>
-            other_vaccine
+            Other vaccine
         </td>
         <td>
             {{ $info->other_vaccine }}
@@ -137,7 +128,7 @@
         
     <tr>
         <td>
-            other_vaccine_date
+            Other vaccine date
         </td>
         <td>
             {{ $info->other_vaccine_date }}
@@ -146,19 +137,19 @@
         
     <tr>
         <td>
-            other_vaccine_notes
+            Other vaccine notes
         </td>
         <td>
-            {{ $info->other_vaccine_notes }}
+            <textarea readonly class="display" rows="4">{{ $info->other_vaccine_notes }}</textarea>
         </td>
     </tr>
         
     <tr>
         <td>
-            notes
+            Notes
         </td>
         <td>
-            {{ $info->notes }}
+            <textarea readonly class="display" rows="4">{{ $info->notes }}</textarea>
         </td>
     </tr>
 

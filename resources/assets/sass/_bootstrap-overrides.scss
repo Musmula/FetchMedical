@@ -1,3 +1,11 @@
 .panel, .panel-heading, .dropdown-menu, .btn, .alert, .form-control {
     border-radius: 0;
 }
+
+textarea.display {
+    width: 100%; 
+    resize: vertical; 
+    padding: 10px 20px; 
+    border-radius: 3px;
+    border-color: $panel-default-border;
+}

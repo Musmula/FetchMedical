@@ -6758,6 +6758,13 @@ body.stop-scrolling {
 .panel, .panel-heading, .dropdown-menu, .btn, .alert, .form-control {
   border-radius: 0; }
 
+textarea.display {
+  width: 100%;
+  resize: vertical;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border-color: #d3e0e9; }
+
 .sweet-alert button {
   border-radius: 0; }
 

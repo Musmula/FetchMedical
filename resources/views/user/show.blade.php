@@ -1,40 +1,12 @@
 @extends('app')
 
-@section('head')
-
-<style>
-
-    .panel-heading {
-        padding-left: calc(30% + .8rem);
-    }
-
-    .table td {
-        /*width: 50% !important;*/
-    }
-
-    /* Key */
-    .table td:nth-child(2n - 1) {
-        text-align: right;
-        font-weight: 700;
-        width: 30%;
-    }
-
-    /* Value */
-    .table td:nth-child(2n) {
-        text-align: left;
-        width: 70%;
-    }
-</style>
-
-@stop
-
 @section('content')
 
 <div class="container-fluid profile-pic-lg">
     <img src="https://www.gravatar.com/avatar/{{ md5($user->email) }}?s=200&d=mm">
 </div>
 
-<div class="container">
+<div class="container user-info">
     {{-- @include('user.partials.actions') --}}
 
     <div class="row">

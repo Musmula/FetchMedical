@@ -6749,6 +6749,26 @@ body.stop-scrolling {
       top: 10px;
       right: 10px; }
 
+.user-info {
+  /* Key */
+  /* Value */ }
+  .user-info.pdf .panel-heading {
+    padding-left: 20px; }
+  .user-info.pdf .table td:nth-child(2n - 1) {
+    text-align: left;
+    width: 50%; }
+  .user-info.pdf .table td:nth-child(2n) {
+    width: 50%; }
+  .user-info .panel-heading {
+    padding-left: calc(30% + .8rem); }
+  .user-info .table td:nth-child(2n - 1) {
+    text-align: right;
+    font-weight: 700;
+    width: 30%; }
+  .user-info .table td:nth-child(2n) {
+    text-align: left;
+    width: 70%; }
+
 @media (max-width: 655px) {
   .fa-conditional {
     margin-right: 0; }

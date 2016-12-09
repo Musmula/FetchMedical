@@ -14,7 +14,18 @@ class PDFController extends Controller
 
     public function PetProfile($id, $action) {
         $pet = Pet::find($id);
-        $pdf = PDF::loadview('pet.pdf.profile', ['pet' => $pet]);
+        // return view('pet.pdf.profile', [
+        //     'pet'       => $pet,
+        //     'info'      => $pet->info,
+        //     'medical'   => $pet->medicalRecords,
+        //     'user'      => $pet->user
+        // ]);
+        $pdf = PDF::loadview('pet.pdf.profile', [
+            'pet'       => $pet,
+            'info'      => $pet->info,
+            'medical'   => $pet->medicalRecords,
+            'user'      => $pet->user
+        ]);
         if ($action == 'view') {
             return $pdf->stream();
         }

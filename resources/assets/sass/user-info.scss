@@ -1,0 +1,35 @@
+.user-info {
+
+    &.pdf {
+        .panel-heading {
+            padding-left: 20px;
+        }
+
+        .table td:nth-child(2n - 1) {
+            text-align: left;
+            width: 50%;
+        }
+
+        .table td:nth-child(2n) {
+            width: 50%;
+        }
+
+    }
+    
+    .panel-heading {
+        padding-left: calc(30% + .8rem);
+    }
+
+    /* Key */
+    .table td:nth-child(2n - 1) {
+        text-align: right;
+        font-weight: 700;
+        width: 30%;
+    }
+
+    /* Value */
+    .table td:nth-child(2n) {
+        text-align: left;
+        width: 70%;
+    }
+}

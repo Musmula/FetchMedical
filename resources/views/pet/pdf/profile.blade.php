@@ -1,55 +1,71 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Fetch Medical® Records for {{ $pet->name }}</title>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
+@extends('layouts.pdf')
 
-        h1 {
-            width: 100%;
-            padding: 20px 10px;
-            background: #1EA8E6;
-            color: #fff;
-        }
+@section('content')
+<div class="container">
 
-        h2 {
-            margin: 0;
-        }
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            
+            <h1>Fetch Medical<sup>&reg;</sup> Records for {{ $pet->name }}</h1>
+        
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Profile information</h3>
+                </div>
 
-        .box {
-            background: #F5F5F5;
-            padding: 20px;
-            margin: 10px 0;
-            border-radius: 3px;
-            /*border: 1px solid #1EA8E6*/
-        }
-    </style>
-</head>
-<body>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{ $pet->name }}</li>
+                    <li class="list-group-item">Species: {{ $pet->species }}</li>
+                    <li class="list-group-item">Breed: {{ $pet->breed }}</li>
+                    <li class="list-group-item">Color: {{ $pet->color }}</li>
+                    <li class="list-group-item">Gender: {{ $pet->gender }}</li>
+                    <li class="list-group-item">Notes: {{ $pet->notes }}</li>
+                </ul>
 
-    <div class="container">
+            </div> {{-- Panel end --}}
 
-        <h1>Fetch Medical® Records for {{ $pet->name }}</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>General medical information</h3>
+                </div>
 
-        <div class="box">
-            <h2>General Info</h2>
-            <ul>
-                <li>Name: {{ $pet->name }}</li>
-                <li>Species: {{ $pet->species }}</li>
-                <li>Breed: {{ $pet->breed }}</li>
-                <li>Color: {{ $pet->color }}</li>
-                <li>Gender: {{ $pet->gender }}</li>
-                <li>Notes: {{ $pet->notes }}</li>
-            </ul>
-        </div>
+                @include('partials.medical.display.info')
+            </div> {{-- Panel end --}}
 
-        <div class="box">
-            <h2>Medical records</h2>
-            <p>Coming soon, Lauren ;)</p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Species specific medical information</h3>
+                </div>
+
+                @if ($pet->species == 'Dog')
+                    @include('partials.medical.display.dog-medical')
+                @else
+                    @include('partials.medical.display.cat-medical')
+                @endif
+            </div> {{-- Panel end --}}
+
+            <div class="user-info pdf">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Basic User information</div>
+                    @include('user.partials.basic')
+                </div> 
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Contact information</div>
+                    @include('user.partials.contact')
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Vet information</div>
+                    @include('user.partials.vet')
+                </div>
+
+            </div>
+
         </div>
 
     </div>
-</body>
-</html>
+</div>
+
+@stop

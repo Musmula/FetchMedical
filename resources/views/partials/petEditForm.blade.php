@@ -7,9 +7,11 @@
         <label for="picture" class="col-md-4 control-label">New picture</label>
 
         <div class="col-md-6">
-            <span class="btn btn-default btn-file">
+            <input class="form-control" type="file" name="picture">
+
+            {{-- <span class="btn btn-default btn-file">
                 Browse <input type="file" name="picture">
-            </span>
+            </span> --}}
 
             @if ($errors->has('picture'))
                 <span class="help-block">

@@ -6711,8 +6711,8 @@ body.stop-scrolling {
   margin-top: -40px;
   padding: 40px;
   margin-bottom: 20px;
-  background: -webkit-linear-gradient(top left, #2a88bd, #5aacda);
-  background: linear-gradient(to bottom right, #2a88bd, #5aacda); }
+  background: -webkit-linear-gradient(309deg, #5dcde8 0, #3097d1 71%, #52bfe2 100%);
+  background: linear-gradient(141deg, #5dcde8 0, #3097d1 71%, #52bfe2 100%); }
   .profile-pic-lg img {
     width: 300px;
     max-width: 90%;
@@ -6720,24 +6720,6 @@ body.stop-scrolling {
     border-radius: 50%;
     border: 5px solid #fff;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3); }
-
-.btn-file {
-  position: relative;
-  overflow: hidden; }
-  .btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block; }
 
 .pets {
   margin-bottom: -80px; }

@@ -5,7 +5,7 @@
     margin-bottom: 20px;
     // background: $brand-primary url('../img/admin-bg.svg') center / cover;
     // background-attachment: fixed;
-    background: linear-gradient(to bottom right, darken($brand-primary, 5%),lighten($brand-primary, 10%));
+    background: linear-gradient(141deg,#5dcde8 0,#3097d1 71%,#52bfe2 100%);
 
         img {
             width: 300px;
@@ -17,23 +17,23 @@
         }
 }
 
-.btn-file {
-    position: relative;
-    overflow: hidden;
+// .btn-file {
+//     position: relative;
+//     overflow: hidden;
     
-    input[type=file] {
-        position: absolute;
-        top: 0;
-        right: 0;
-        min-width: 100%;
-        min-height: 100%;
-        font-size: 100px;
-        text-align: right;
-        filter: alpha(opacity=0);
-        opacity: 0;
-        outline: none;
-        background: white;
-        cursor: inherit;
-        display: block;
-    }
-}
+//     input[type=file] {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         min-width: 100%;
+//         min-height: 100%;
+//         font-size: 100px;
+//         text-align: right;
+//         filter: alpha(opacity=0);
+//         opacity: 0;
+//         outline: none;
+//         background: white;
+//         cursor: inherit;
+//         display: block;
+//     }
+// }

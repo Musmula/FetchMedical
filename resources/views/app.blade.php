@@ -93,10 +93,10 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+   {{--                                      <a href="#">
                                             <i aria-hidden="true" class="fa fa-search"></i>
                                             Pet Search
-                                        </a>
+                                        </a> --}}
                                     </li>
                                     {{-- <li>
                                         <a href="{{ url('/users') }}">

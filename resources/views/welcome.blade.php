@@ -1,84 +1,92 @@
 @extends('app')
 
 @section('head')
-
-<style>
-    .panel-heading{
-        background: url('img/banner.jpg') center / cover;
-        height: 300px;
-        position: relative;
-    }
-
-    .panel-heading h2 {
-        position: absolute;
-        left: 10px;
-        bottom: 0;
-        color: #fff;
-        background-color: #3097D1;
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 2em;
-        max-width: 80%;
-    }
-
-    .panel-body {
-        padding: 0;
-    }
-
-    .actions {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin-top: 40px;
-    }
-
-    .actions .action {
-        flex-basis: 200px;
-        text-decoration: none;
-    }
-    
-    .actions .action img {
-        width: 100%;
-        height: auto;
-    }
-
-    .actions .action p {
-        text-align: center;
-        color: #636b6f;
-        font-size: 20px;
-        padding-top: 10px;
-    }
-</style>
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/homepage.css">
 @stop
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+    <div class="homepage">
+        <div class="hero">
+            <h2>You looking for a Jedi?</h2>
+        </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2>Welcome to Fetch Medical</h2>
+        <div class="process">
+            <h2>Medical records - Simplified</h2>
+
+            <div class="item">
+                <img src="{{ url('/img/process/1.jpg') }}">
+                <div class="clearfix"></div>
+                <span class="number">1</span>
+                <p class="text">
+                    Input some basic info so we can do the work for you
+                </p>
             </div>
 
-            <div class="panel-body">
-                <div class="actions">
-                    <a href="{{ url('register') }}" class="action signup">
-                        <img src="{{ url('img/dog-laptop.jpg') }}">
-                        <p>Sign up</p>
-                    </a>
-                    <a href="{{ url('login') }}" class="action login">
-                        <img src="{{ url('img/cat-laptop.jpg') }}">
-                        <p>Log in</p>
-                    </a>
-                    <a href="{{ url('about') }}" class="action more">
-                        <img src="{{ url('img/dog-vet.jpg') }}">
-                        <p>Learn more</p>
-                    </a>
+            <div class="item">
+                <img src="{{ url('/img/process/2.jpg') }}">
+                <div class="clearfix"></div>
+                <span class="number">2</span>
+                <p class="text">
+                    We'll ask your vet for your pets medical info and let you now when it arrives
+                </p>
+            </div>
+
+            <div class="item">
+                <img src="{{ url('/img/process/3.jpg') }}">
+                <div class="clearfix"></div>
+                <span class="number">3</span>
+                <p class="text">
+                    Once they do, you can share them for any number of reasons
+                </p>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h2>Why people choose Fetch Medical</h2>
+
+            <div class="item">
+                <img src="{{ url('/img/testimonials/1.jpg') }}">
+                <div class="content">
+                    <h3 class="name">Caleb Smith</h3>
+                    <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore 
+                    </p>
                 </div>
             </div>
-        </div> {{-- Panel end --}}
+
+            <div class="item">
+                <img src="{{ url('/img/testimonials/2.jpg') }}">
+                <div class="content">
+                    <h3 class="name">Annika Hansen</h3>
+                    <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore 
+                    </p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="{{ url('/img/testimonials/3.jpg') }}">
+                <div class="content">
+                    <h3 class="name">Excena Foer</h3>
+                    <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>You too can register an account for FREE</h2>
+            <a href="{{ url('register') }}" class="btn btn-primary">Leets do this</a>
+        </div>
+
+        <div class="contact">
+            <a href="mailto:hello@fetchmedical.com">hello@fetchmedical.com</a>
+        </div>
+
     </div>
-</div>
-@endsection
+@stop

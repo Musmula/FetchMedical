@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('head')
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/homepage.css">
 @stop
 

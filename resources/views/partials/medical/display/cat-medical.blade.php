@@ -47,7 +47,7 @@
     
     <tr>
         <td>
-            FIP vednor
+            FIP vendor
         </td>
         <td>
             {{ $medical->fip_vendor }}

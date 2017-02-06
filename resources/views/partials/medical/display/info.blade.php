@@ -38,7 +38,7 @@
     
     <tr>
         <td>
-            Insurrance policy
+            Insurance policy
         </td>
         <td>
             {{ $info->insurrance_policy }}
@@ -47,7 +47,7 @@
     
     <tr>
         <td>
-            Insurrance company
+            Insurance company
         </td>
         <td>
             {{ $info->insurrance_co }}

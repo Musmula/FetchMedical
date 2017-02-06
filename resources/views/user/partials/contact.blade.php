@@ -2,6 +2,15 @@
     <tbody>
         <tr>
             <td>
+                Name
+            </td>
+            <td>
+                {{ $user->name }}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
                 Phone
             </td>
             <td>
@@ -20,7 +29,7 @@
 
         <tr>
             <td>
-                City
+                City/State/Zip
             </td>
             <td>
                 {{ $user->contact->city == "" ? 'Not set' : $user->contact->city }}
@@ -29,16 +38,25 @@
 
         <tr>
             <td>
-                ZIP
+                Zip
             </td>
             <td>
                 {{ $user->contact->zip == "" ? 'Not set' : $user->contact->zip }}
             </td>
         </tr>
+        
+        <tr>
+            <td>
+                E-mail
+            </td>
+            <td>
+                {{ $user->email }}
+            </td>
+        </tr>
 
         <tr>
             <td>
-                FAX
+                Fax
             </td>
             <td>
                 {{ $user->contact->fax == "" ? 'Not set' : $user->contact->fax }}

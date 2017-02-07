@@ -8,7 +8,7 @@
 @section('content')
     <div class="homepage">
         <div class="hero">
-            <h2>You looking for a Jedi?</h2>
+            <h2>Fetch Medical is a free application created for devoted pet parents who want to track their pet's health history online.</h2>
         </div>
 
         <div class="process">

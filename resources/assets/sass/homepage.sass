@@ -1,3 +1,5 @@
+$primary: #2296f3
+
 .homepage
     font-family: 'Roboto', sans-serif
     background-color: #F8F8F8
@@ -7,20 +9,21 @@
         min-height: calc(100vh - 50px)
         height: 600px
         margin-top: -22px
-        background: url('../img/FetchMedicalPhoto.jpg') top / cover fixed
+        background: url('../img/FetchMedicalPhoto.jpg') top left / cover fixed
         position: relative
 
         h2
             position: absolute
-            left: 0
+            right: 0
             bottom: 0
-            width: 100%
+            width: 700px
+            max-width: 100%
             text-align: center
-            background: rgba(0, 0, 0, .7)
+            background: $primary
             color: #fff
             display: inline-block
-            padding: 40px 20px
-            font-size: 3em
+            padding: 40px 30px
+            font-size: 2.5em
             margin: 0
             font-weight: normal
 
@@ -30,7 +33,7 @@
         align-items: center
         justify-content: center
         flex-basis: 256px
-        padding: 40px 0
+        padding: 60px 0
         width: 90%
         margin: 0 auto
 
@@ -39,7 +42,7 @@
             display: inline
             width: 100%
             text-align: center
-            margin-bottom: 20px
+            margin-bottom: 30px
             font-size: 3em
 
         .item 
@@ -64,7 +67,7 @@
             text-align: left
 
     .testimonials
-        background-color: #2296f3
+        background-color: $primary
         min-height: 400px
         padding: 40px 0
 
@@ -128,5 +131,5 @@
 
         a 
             font-size: 3em
-            color: #2296f3
+            color: $primary
             text-decoration: none

@@ -6,19 +6,20 @@
     min-height: calc(100vh - 50px);
     height: 600px;
     margin-top: -22px;
-    background: url("../img/FetchMedicalPhoto.jpg") top/cover fixed;
+    background: url("../img/FetchMedicalPhoto.jpg") top left/cover fixed;
     position: relative; }
     .homepage .hero h2 {
       position: absolute;
-      left: 0;
+      right: 0;
       bottom: 0;
-      width: 100%;
+      width: 700px;
+      max-width: 100%;
       text-align: center;
-      background: rgba(0, 0, 0, 0.7);
+      background: #2296f3;
       color: #fff;
       display: inline-block;
-      padding: 40px 20px;
-      font-size: 3em;
+      padding: 40px 30px;
+      font-size: 2.5em;
       margin: 0;
       font-weight: normal; }
   .homepage .process {
@@ -30,7 +31,7 @@
     -webkit-box-pack: center;
     justify-content: center;
     flex-basis: 256px;
-    padding: 40px 0;
+    padding: 60px 0;
     width: 90%;
     margin: 0 auto; }
     .homepage .process h2 {
@@ -38,7 +39,7 @@
       display: inline;
       width: 100%;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       font-size: 3em; }
     .homepage .process .item {
       text-align: center;

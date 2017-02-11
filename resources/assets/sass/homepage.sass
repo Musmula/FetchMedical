@@ -60,6 +60,7 @@ $primary: #2296f3
             height: 119px
             width: auto
 
+
         .text 
             margin-top: 20px
             line-height: 1
@@ -80,27 +81,33 @@ $primary: #2296f3
             margin-bottom: 30px
 
         .item 
-            width: 480px
+            width: 512px
             max-width: 90%
             margin: 20px auto
             box-shadow: 0 0 15px rgba(0, 0, 0, .3)
-            background-color: #fff
+            background-color: #FDFDFD
             border-radius: 3px
 
             display: flex
             justify-content: left
+            flex-wrap: wrap
+            
+            @media (max-width: 480px)
+                flex-direction: column
 
-            img  
-                min-height: 150px
-                height: 100%
-                width: auto
-                margin-right: 20px
+            img 
                 border-top-left-radius: 3px
                 border-bottom-left-radius: 3px
+                width: 200px
+                height: 200px
 
-            .text 
-                margin-top: 7px
-                padding-right: 20px
+                @media (max-width: 480px)
+                    width: 100%
+                    height: auto
+
+            .content 
+                margin: 7px 20px
+                flex: 1
 
     .cta-section
         text-align: center

@@ -9,8 +9,11 @@ $primary: #2296f3
         min-height: calc(100vh - 50px)
         height: 600px
         margin-top: -22px
-        background: url('../img/FetchMedicalPhoto.jpg') top left / cover fixed
         position: relative
+        background: url('../img/FetchMedicalPhoto.jpg') top left / cover fixed
+
+        @media (max-width: 480px)
+            background-position: -120px 0
 
         h2
             position: absolute
@@ -102,6 +105,8 @@ $primary: #2296f3
                 height: 200px
 
                 @media (max-width: 480px)
+                    border-bottom-left-radius: 0
+                    border-top-right-radius: 3px
                     width: 100%
                     height: auto
 

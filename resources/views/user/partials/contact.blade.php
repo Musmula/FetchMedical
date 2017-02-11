@@ -32,16 +32,7 @@
                 City/State/Zip
             </td>
             <td>
-                {{ $user->contact->city == "" ? 'Not set' : $user->contact->city }}
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Zip
-            </td>
-            <td>
-                {{ $user->contact->zip == "" ? 'Not set' : $user->contact->zip }}
+                {{ $user->contact->city == "" ? 'Not set' : $user->contact->city }} / {{ $user->contact->state == "" ? 'Not set' : $user->contact->state }} / {{ $user->contact->zip == "" ? 'Not set' : $user->contact->zip }}
             </td>
         </tr>
         

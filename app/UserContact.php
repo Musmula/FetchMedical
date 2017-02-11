@@ -12,6 +12,7 @@ class UserContact extends Model
         'phone',
         'address',
         'city',
+        'state',
         'zip',
         'fax',
 

@@ -10,8 +10,10 @@ class Vet extends Model
         'user_id',
         'name',
         'phone',
+        'email',
         'address',
         'city',
+        'state',
         'zip',
         'fax',
 

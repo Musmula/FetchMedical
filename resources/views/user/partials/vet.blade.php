@@ -28,25 +28,25 @@
 
         <tr>
             <td>
-                City
+                City/State/Zip
             </td>
             <td>
-                {{ $user->vet->city == "" ? 'Not set' : $user->vet->city }}
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                ZIP
-            </td>
-            <td>
-                {{ $user->vet->zip == "" ? 'Not set' : $user->vet->zip }}
+                {{ $user->vet->city == "" ? 'Not set' : $user->vet->city }} / {{ $user->vet->state == "" ? 'Not set' : $user->vet->state }} / {{ $user->vet->zip == "" ? 'Not set' : $user->vet->zip }}
             </td>
         </tr>
 
         <tr>
             <td>
-                FAX
+                E-mail
+            </td>
+            <td>
+                {{ $user->vet->email == "" ? 'Not set' : $user->vet->email }}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Fax
             </td>
             <td>
                 {{ $user->vet->fax == "" ? 'Not set' : $user->vet->fax }}

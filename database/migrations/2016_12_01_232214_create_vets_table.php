@@ -18,8 +18,10 @@ class CreateVetsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
+            $table->string('email')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
+            $table->string('state')->nullable();
             $table->string('zip')->nullable();
             $table->string('fax')->nullable();
             

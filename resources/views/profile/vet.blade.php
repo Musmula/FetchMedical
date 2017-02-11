@@ -36,6 +36,20 @@
             </div>
         </div>
 
+        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <label for="email" class="col-md-4 control-label">E-mail</label>
+
+            <div class="col-md-6">
+                <input id="email" type="email" class="form-control" name="email" value="{{ (Auth::user()->vet->email == 'No email number set') ? '' : Auth::user()->vet->email }}">
+
+                @if ($errors->has('email'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+
         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
             <label for="address" class="col-md-4 control-label">Address</label>
 
@@ -64,8 +78,28 @@
             </div>
         </div>
 
+        <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
+            <label for="state" class="col-md-4 control-label">State</label>
+
+            <div class="col-md-6">
+                <select id="state" type="text" class="form-control" name="state">
+                    @foreach(UsStates() as $state)
+                        <option
+                            {{ Auth::user()->vet->state == $state ? 'selected="true"' : '' }}
+                            >{{ $state }}</option>
+                    @endforeach
+                </select>
+
+                @if ($errors->has('state'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('state') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+
         <div class="form-group{{ $errors->has('zip') ? ' has-error' : '' }}">
-            <label for="zip" class="col-md-4 control-label">ZIP</label>
+            <label for="zip" class="col-md-4 control-label">Zip</label>
 
             <div class="col-md-6">
                 <input id="zip" type="number" class="form-control" name="zip" value="{{ Auth::user()->vet->zip }}">

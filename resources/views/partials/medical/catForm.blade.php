@@ -99,34 +99,66 @@
     </div>
 </div> {{-- /fip_vendor --}}
 
-<div class='form-group{{ $errors->has('leukemia_test') ? ' has-error' : '' }}'>
-    <label for='leukemia_test' class='col-md-4 control-label'>Leukemia test</label>
+<div class='form-group{{ $errors->has('fiv_test') ? ' has-error' : '' }}'>
+    <label for='fiv_test' class='col-md-4 control-label'>FIV test</label>
 
     <div class='col-md-6'>
-        <input type='date' class='form-control' name='leukemia_test' id='leukemia_test' value="{{ $records->leukemia_test }}">
+        <input type='date' class='form-control' name='fiv_test' id='fiv_test' value="{{ $records->fiv_test }}">
 
-        @if ($errors->has('leukemia_test'))
+        @if ($errors->has('fiv_test'))
             <span class='help-block'>
-                <strong>{{ $errors->first('leukemia_test') }}</strong>
+                <strong>{{ $errors->first('fiv_test') }}</strong>
             </span>
         @endif
     </div>
-</div> {{-- /leukemia_test --}}
+</div> {{-- /fiv_test --}}
 
-<div class="form-group{{ $errors->has('leukemia_test_results') ? ' has-error' : '' }}">
-    <label for="leukemia_test_results" class="col-md-4 control-label">Leukemia test results</label>
+<div class="form-group{{ $errors->has('fiv_test_results') ? ' has-error' : '' }}">
+    <label for="fiv_test_results" class="col-md-4 control-label">FIV test results</label>
 
     <div class="col-md-6">
 
-        <select class="form-control" name="leukemia_test_results" id="leukemia_test_results">
-            <option {{ $records->leukemia_test_results == 'Negative' ? 'selected' : null }}>Negative</option>
-            <option {{ $records->leukemia_test_results == 'Positive' ? 'selected' : null }}>Positive</option>
+        <select class="form-control" name="fiv_test_results" id="fiv_test_results">
+            <option {{ $records->fiv_test_results == 'Negative' ? 'selected' : null }}>Negative</option>
+            <option {{ $records->fiv_test_results == 'Positive' ? 'selected' : null }}>Positive</option>
         </select>
 
-        @if ($errors->has('leukemia_test_results'))
+        @if ($errors->has('fiv_test_results'))
             <span class="help-block">
-                <strong>{{ $errors->first('leukemia_test_results') }}</strong>
+                <strong>{{ $errors->first('fiv_test_results') }}</strong>
             </span>
         @endif
     </div>
-</div> {{-- /leukemia_test_results --}}
+</div> {{-- /fiv_test_results --}}
+
+<div class='form-group{{ $errors->has('felv_test') ? ' has-error' : '' }}'>
+    <label for='felv_test' class='col-md-4 control-label'>FeLV test</label>
+
+    <div class='col-md-6'>
+        <input type='date' class='form-control' name='felv_test' id='felv_test' value="{{ $records->felv_test }}">
+
+        @if ($errors->has('felv_test'))
+            <span class='help-block'>
+                <strong>{{ $errors->first('felv_test') }}</strong>
+            </span>
+        @endif
+    </div>
+</div> {{-- /felv_test --}}
+
+<div class="form-group{{ $errors->has('felv_test_results') ? ' has-error' : '' }}">
+    <label for="felv_test_results" class="col-md-4 control-label">FeLV test results</label>
+
+    <div class="col-md-6">
+
+        <select class="form-control" name="felv_test_results" id="felv_test_results">
+            <option {{ $records->felv_test_results == 'Negative' ? 'selected' : null }}>Negative</option>
+            <option {{ $records->felv_test_results == 'Positive' ? 'selected' : null }}>Positive</option>
+        </select>
+
+        @if ($errors->has('felv_test_results'))
+            <span class="help-block">
+                <strong>{{ $errors->first('felv_test_results') }}</strong>
+            </span>
+        @endif
+    </div>
+</div> {{-- /felv_test_results --}}

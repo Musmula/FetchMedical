@@ -56,19 +56,37 @@
     
     <tr>
         <td>
-            Leukemia test
+            FIV test
         </td>
         <td>
-            {{ $medical->leukemia_test }}
+            {{ $medical->fiv_test }}
         </td>
     </tr>
     
     <tr>
         <td>
-            Leukemia test results
+            FIV test results
         </td>
         <td>
-            {{ $medical->leukemia_test_results }}
+            {{ $medical->fiv_test_results }}
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            FeLV test
+        </td>
+        <td>
+            {{ $medical->felv_test }}
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            FeLV test results
+        </td>
+        <td>
+            {{ $medical->felv_test_results }}
         </td>
     </tr>
     

@@ -26,8 +26,11 @@ class CreateCatRecordsTable extends Migration
             $table->date('fip_vaccine')->nullable();
             $table->string('fip_vendor')->nullable();
 
-            $table->date('leukemia_test')->nullable();
-            $table->enum('leukemia_test_results', ['Negative', 'Positive'])->nullable();
+            $table->date('fiv_test')->nullable();
+            $table->enum('fiv_test_results', ['Negative', 'Positive'])->nullable();
+
+            $table->date('felv_test')->nullable();
+            $table->enum('felv_test_results', ['Negative', 'Positive'])->nullable();
 
             $table->foreign('pet_id')
                   ->references('id')->on('pets')

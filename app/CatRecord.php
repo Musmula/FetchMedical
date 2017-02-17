@@ -15,8 +15,10 @@ class CatRecord extends Model
         'felv_vendor',
         'fip_vaccine',
         'fip_vendor',
-        'leukemia_test',
-        'leukemia_test_results',
+        'felv_test',
+        'felv_test_results',
+        'fiv_test',
+        'fiv_test_results',
         
     ];
 

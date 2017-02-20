@@ -58,13 +58,24 @@ class ProfileController extends Controller
     }
 
     public function vet() {
+        if (count(Auth::user()->pets) == 0 && !Auth::user()->passTutorial) {
+            alert()->info('In order to register a pet, you need to provide our team with your Vets contact information', 'Vet contact info')->persistent('Ok');
+        }
         return view("profile.vet", ['active' => 'vet']);
     }
 
     public function updateVet(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'phone' => 'required',
+        ]);
         Auth::user()->vet->update($request->except('_method', '_token'));
-        alert()->success('Vet information updated');
-        return redirect()->back();
+        if (Auth::user()->passTutorial) {
+            return redirect()->back();
+        }
+        Auth::user()->update(['passTutorial' => 1]);
+        alert()->success('You can now register your pets', 'Vet information updated')->persistent('Ok');
+        return redirect('pets');
     }
 
     public function deleteAcc() {

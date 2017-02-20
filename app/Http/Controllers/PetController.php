@@ -28,6 +28,9 @@ class PetController extends Controller
      */
     public function index()
     {
+        if (!Auth::user()->passTutorial) {
+            return redirect('/profile/vet');
+        }
         return view("pet.index");
     }
 

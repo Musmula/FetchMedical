@@ -9,10 +9,10 @@
         {{ method_field('PATCH') }}
 
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-            <label for="name" class="col-md-4 control-label">Name</label>
+            <label for="name" class="col-md-4 control-label">Name*</label>
 
             <div class="col-md-6">
-                <input id="name" type="text" class="form-control" name="name" value="{{ (Auth::user()->vet->name == 'No name set') ? '' : Auth::user()->vet->name }}">
+                <input id="name" type="text" class="form-control" required name="name" value="{{ (Auth::user()->vet->name == 'No name set') ? '' : Auth::user()->vet->name }}">
 
                 @if ($errors->has('name'))
                     <span class="help-block">
@@ -23,10 +23,10 @@
         </div>
 
         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-            <label for="phone" class="col-md-4 control-label">Phone number</label>
+            <label for="phone" class="col-md-4 control-label">Phone number*</label>
 
             <div class="col-md-6">
-                <input id="phone" type="number" class="form-control" name="phone" value="{{ (Auth::user()->vet->phone == 'No phone number set') ? '' : Auth::user()->vet->phone }}">
+                <input id="phone" type="number" class="form-control" name="phone" required value="{{ (Auth::user()->vet->phone == 'No phone number set') ? '' : Auth::user()->vet->phone }}">
 
                 @if ($errors->has('phone'))
                     <span class="help-block">

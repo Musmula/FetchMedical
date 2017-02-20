@@ -12,14 +12,14 @@
         </div>
 
         <div class="process">
-            <h2>Medical records - Simplified</h2>
+            <h2>Pet Medical records - Simplified</h2>
 
             <div class="item">
                 <img src="{{ url('/img/process/1.jpg') }}">
                 <div class="clearfix"></div>
                 <span class="number">1</span>
                 <p class="text">
-                    Input some basic info so we can do the work for you
+                    Input your pet's information, including name of vet
                 </p>
             </div>
 
@@ -28,7 +28,7 @@
                 <div class="clearfix"></div>
                 <span class="number">2</span>
                 <p class="text">
-                    We'll ask your vet for your pets medical info and let you now when it arrives
+                    Our team will contact your vet and compile your pet's medical history
                 </p>
             </div>
 
@@ -37,7 +37,7 @@
                 <div class="clearfix"></div>
                 <span class="number">3</span>
                 <p class="text">
-                    Once they do, you can share them for any number of reasons
+                    Keep and share your pet's information
                 </p>
             </div>
         </div>
@@ -81,7 +81,7 @@
 
         <div class="cta-section">
             <h2>You too can register an account for FREE</h2>
-            <a href="{{ url('register') }}" class="btn btn-primary">Leets do this</a>
+            <a href="{{ url('register') }}" class="btn btn-primary">Lets do this</a>
         </div>
 
         <div class="contact">

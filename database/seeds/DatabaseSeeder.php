@@ -15,13 +15,19 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        // User::truncate();
+        Eloquent::unguard();
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        User::truncate();
+        Vet::truncate();
+        UserContact::truncate();
         
         User::create([
             'name'      => 'Oliver',
             'email'     => 'oliver.dvorski@gmail.com',
             'is_admin'  => 1,
-            'password'  => 'password',
+            'password'  => bcrypt('password'),
         ]);
 
         UserContact::create([
@@ -31,5 +37,7 @@ class DatabaseSeeder extends Seeder
         Vet::create([
             'user_id' => 1
         ]);
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

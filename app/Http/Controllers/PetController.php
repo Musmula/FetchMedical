@@ -100,7 +100,7 @@ class PetController extends Controller
         }
         // End of medical records
 
-        Alert::success('Our team will now contact your vet and update your pet\'s medical records.')->persistent('Ok');
+        Alert::success('Thank you! Your message has been sent!')->persistent('Ok');
         return redirect('/home');
     }
 
@@ -229,7 +229,7 @@ class PetController extends Controller
             'message'   => $request->message
         ]);
 
-        alert()->success('Our team will get to it as soon as they can. Plese don\'t repeat your requests since we go over ALL of them.', 'Your request has been dispatched')->persistent('Close');
+        alert()->success('Thank you! Your message has been sent!')->persistent('Close');
         return redirect('/pets/' . $id);
     }
 }

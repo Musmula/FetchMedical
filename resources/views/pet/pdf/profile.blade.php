@@ -4,7 +4,7 @@
 <div class="header">
     <h1 id="heading">
         <img src="{{ public_path('img/logo.svg') }}" id="logo">
-        Fetch Medical<sup id="r">&reg;</sup>
+        Fetch Medical<span id="r">&reg;</span>
     </h1>
 </div>
 
@@ -49,25 +49,6 @@
                     @include('partials.medical.display.cat-medical')
                 @endif
             </div> {{-- Panel end --}}
-
-            <div class="user-info pdf">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Basic User information</h3></div>
-                    @include('user.partials.basic')
-                </div> 
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Contact information</h3></div>
-                    @include('user.partials.contact')
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Vet information</h3></div>
-                    @include('user.partials.vet')
-                </div>
-
-            </div>
 
         </div>
 

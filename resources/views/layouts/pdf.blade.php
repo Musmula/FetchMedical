@@ -33,9 +33,13 @@
           font-size: 3em;
         }
 
+        #heading img {
+          height: 2em;
+        }
 
         #heading #r {
-          font-size: 0.6em;
+          font-size: 0.3em;
+          vertical-align: middle;
         }
 
         .panel {

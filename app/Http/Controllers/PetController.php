@@ -100,7 +100,7 @@ class PetController extends Controller
         }
         // End of medical records
 
-        Alert::success('Our team has been notified of the registration and they will fill in the medical records your vet provides them with as soon as possible', 'Pet registered successfully')->persistent('Ok');
+        Alert::success('Our team will now contact your vet and update your pet\'s medical records.')->persistent('Ok');
         return redirect('/home');
     }
 

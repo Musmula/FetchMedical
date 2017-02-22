@@ -14,7 +14,7 @@
                 Phone
             </td>
             <td>
-                {{ $user->contact->phone == "" ? 'Not set' : $user->contact->phone }}
+                {{ $user->contact->phone == "" ? '' : $user->contact->phone }}
             </td>
         </tr>
 
@@ -23,7 +23,7 @@
                 Address
             </td>
             <td>
-                {{ $user->contact->address == "" ? 'Not set' : $user->contact->address }}
+                {{ $user->contact->address == "" ? '' : $user->contact->address }}
             </td>
         </tr>
 
@@ -32,7 +32,7 @@
                 City/State/Zip
             </td>
             <td>
-                {{ $user->contact->city == "" ? 'Not set' : $user->contact->city }} / {{ $user->contact->state == "" ? 'Not set' : $user->contact->state }} / {{ $user->contact->zip == "" ? 'Not set' : $user->contact->zip }}
+                {{ $user->contact->city == "" ? '' : $user->contact->city }} / {{ $user->contact->state == "" ? '' : $user->contact->state }} / {{ $user->contact->zip == "" ? '' : $user->contact->zip }}
             </td>
         </tr>
         
@@ -50,7 +50,7 @@
                 Fax
             </td>
             <td>
-                {{ $user->contact->fax == "" ? 'Not set' : $user->contact->fax }}
+                {{ $user->contact->fax == "" ? '' : $user->contact->fax }}
             </td>
         </tr>
 

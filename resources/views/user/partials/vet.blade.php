@@ -5,7 +5,7 @@
                 Name
             </td>
             <td>
-                {{ $user->vet->name == "" ? 'Not set' : $user->vet->name }}
+                {{ $user->vet->name == "" ? '' : $user->vet->name }}
             </td>
         </tr>
         <tr>
@@ -13,7 +13,7 @@
                 Phone
             </td>
             <td>
-                {{ $user->vet->phone == "" ? 'Not set' : $user->vet->phone }}
+                {{ $user->vet->phone == "" ? '' : $user->vet->phone }}
             </td>
         </tr>
 
@@ -22,7 +22,7 @@
                 Address
             </td>
             <td>
-                {{ $user->vet->address == "" ? 'Not set' : $user->vet->address }}
+                {{ $user->vet->address == "" ? '' : $user->vet->address }}
             </td>
         </tr>
 
@@ -31,7 +31,7 @@
                 City/State/Zip
             </td>
             <td>
-                {{ $user->vet->city == "" ? 'Not set' : $user->vet->city }} / {{ $user->vet->state == "" ? 'Not set' : $user->vet->state }} / {{ $user->vet->zip == "" ? 'Not set' : $user->vet->zip }}
+                {{ $user->vet->city == "" ? '' : $user->vet->city }} / {{ $user->vet->state == "" ? '' : $user->vet->state }} / {{ $user->vet->zip == "" ? '' : $user->vet->zip }}
             </td>
         </tr>
 
@@ -40,7 +40,7 @@
                 E-mail
             </td>
             <td>
-                {{ $user->vet->email == "" ? 'Not set' : $user->vet->email }}
+                {{ $user->vet->email == "" ? '' : $user->vet->email }}
             </td>
         </tr>
 
@@ -49,7 +49,7 @@
                 Fax
             </td>
             <td>
-                {{ $user->vet->fax == "" ? 'Not set' : $user->vet->fax }}
+                {{ $user->vet->fax == "" ? '' : $user->vet->fax }}
             </td>
         </tr>
 

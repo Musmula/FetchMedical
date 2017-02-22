@@ -24,7 +24,7 @@ class PDFController extends Controller
         if ($action == 'view') {
             return $pdf->stream();
         }
-        return $pdf->download('Fetchmedical profile for ' . $pet->name . '.pdf');
+        return $pdf->download('Fetch Medical profile for ' . $pet->name . '.pdf');
         // return view('pet.pdf.profile', ['pet' => $pet]);
     }
 }

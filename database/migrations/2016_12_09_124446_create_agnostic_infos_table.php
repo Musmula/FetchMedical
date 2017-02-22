@@ -30,6 +30,9 @@ class CreateAgnosticInfosTable extends Migration
 
             $table->date('rabies_date')->nullable();
             $table->string('rabies_co')->nullable();
+
+            $table->string('rabies_vaccine')->nullable();
+            $table->string('rabies_vendor')->nullable();
             
             $table->date('fecal_test')->nullable();
             $table->enum('fecal_test_results', ['Negative', 'Positive'])->nullable();

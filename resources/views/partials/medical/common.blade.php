@@ -134,7 +134,7 @@
 </div> {{-- /rabies_co --}}
 
 <div class='form-group{{ $errors->has('rabies_vaccine') ? ' has-error' : '' }}'>
-    <label for='rabies_vaccine' class='col-md-4 control-label'>Rabies co</label>
+    <label for='rabies_vaccine' class='col-md-4 control-label'>Rabies vaccine</label>
 
     <div class='col-md-6'>
         <input type='text' class='form-control' name='rabies_vaccine' id='rabies_vaccine' value="{{ $generalRecords->rabies_vaccine }}">
@@ -148,7 +148,7 @@
 </div> {{-- /rabies_vaccine --}}
 
 <div class='form-group{{ $errors->has('rabies_vendor') ? ' has-error' : '' }}'>
-    <label for='rabies_vendor' class='col-md-4 control-label'>Rabies co</label>
+    <label for='rabies_vendor' class='col-md-4 control-label'>Rabies vendor</label>
 
     <div class='col-md-6'>
         <input type='text' class='form-control' name='rabies_vendor' id='rabies_vendor' value="{{ $generalRecords->rabies_vendor }}">

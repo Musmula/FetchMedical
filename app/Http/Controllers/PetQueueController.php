@@ -100,7 +100,7 @@ class PetQueueController extends Controller
             $queueItem->pet->update(['processed' => 0]);
 
         $queueItem->delete();
-        alert()->success('The queue item has been destroyed', 'Done');
+        alert()->success('Pet Record updated and available for pet parent.', 'Done');
         return redirect('/pets/queue');
     }
 }

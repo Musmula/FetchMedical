@@ -1,5 +1,5 @@
 <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
-    <label for="weight" class="col-md-4 control-label">Weight</label>
+    <label for="weight" class="col-md-4 control-label">Weight (pounds)</label>
 
     <div class="col-md-6">
         <input type="number" class="form-control" name="weight" id="weight" value="{{ $generalRecords->weight}}">
@@ -59,7 +59,7 @@
 </div> {{-- /microchip_co --}}
 
 <div class="form-group{{ $errors->has('insurrance_policy') ? ' has-error' : '' }}">
-    <label for="insurrance_policy" class="col-md-4 control-label">Insurrance policy</label>
+    <label for="insurrance_policy" class="col-md-4 control-label">Insurance policy</label>
 
     <div class="col-md-6">
         <input type="text" class="form-control" name="insurrance_policy" id="insurrance_policy" value="{{ $generalRecords->insurrance_policy}}">
@@ -73,7 +73,7 @@
 </div> {{-- /insurrance_policy --}}
 
 <div class="form-group{{ $errors->has('insurrance_co') ? ' has-error' : '' }}">
-    <label for="insurrance_co" class="col-md-4 control-label">Insurrance vendor</label>
+    <label for="insurrance_co" class="col-md-4 control-label">Insurance vendor</label>
 
     <div class="col-md-6">
 
@@ -132,6 +132,34 @@
         @endif
     </div>
 </div> {{-- /rabies_co --}}
+
+<div class='form-group{{ $errors->has('rabies_vaccine') ? ' has-error' : '' }}'>
+    <label for='rabies_vaccine' class='col-md-4 control-label'>Rabies co</label>
+
+    <div class='col-md-6'>
+        <input type='text' class='form-control' name='rabies_vaccine' id='rabies_vaccine' value="{{ $generalRecords->rabies_vaccine }}">
+
+        @if ($errors->has('rabies_vaccine'))
+            <span class='help-block'>
+                <strong>{{ $errors->first('rabies_vaccine') }}</strong>
+            </span>
+        @endif
+    </div>
+</div> {{-- /rabies_vaccine --}}
+
+<div class='form-group{{ $errors->has('rabies_vendor') ? ' has-error' : '' }}'>
+    <label for='rabies_vendor' class='col-md-4 control-label'>Rabies co</label>
+
+    <div class='col-md-6'>
+        <input type='text' class='form-control' name='rabies_vendor' id='rabies_vendor' value="{{ $generalRecords->rabies_vendor }}">
+
+        @if ($errors->has('rabies_vendor'))
+            <span class='help-block'>
+                <strong>{{ $errors->first('rabies_vendor') }}</strong>
+            </span>
+        @endif
+    </div>
+</div> {{-- /rabies_vendor --}}
 
 <div class='form-group{{ $errors->has('fecal_test') ? ' has-error' : '' }}'>
     <label for='fecal_test' class='col-md-4 control-label'>Fecal test</label>

@@ -59,7 +59,7 @@ class ProfileController extends Controller
 
     public function vet() {
         if (count(Auth::user()->pets) == 0 && !Auth::user()->passTutorial) {
-            alert()->info('In order to register a pet, you need to provide our team with your Vets contact information', 'Vet contact info')->persistent('Ok');
+            alert()->info('Please provide the contact information for your pet\'s veterinarian.', 'Vet contact info')->persistent('Ok');
         }
         return view("profile.vet", ['active' => 'vet']);
     }

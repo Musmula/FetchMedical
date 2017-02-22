@@ -18,6 +18,8 @@ class AgnosticInfo extends Model
         'conditions',
         'rabies_date',
         'rabies_co',
+        'rabies_vaccine',
+        'rabies_vendor',
         'fecal_test',
         'fecal_test_results',
         'dental_date',

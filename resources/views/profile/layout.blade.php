@@ -2,23 +2,9 @@
 
 @section('content')
 
-<div class="container-fluid profile-pic-lg">
-    <img src="https://www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}?s=300&d=mm">
-</div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-
-            @if (!isset($_COOKIE['gravatar']))
-                <div class="alert alert-info alert-dismissible" id="gravatar-notice" role="alert">
-                    Want to change your profile picture?
-                    We pull those from <a href="https://en.gravatar.com/" target="_blank" class="alert-link">gravatar.com</a>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-            @endif
-            
-
             <div class="panel panel-default">
                 <div class="panel-heading">Your basic account information</div>
 

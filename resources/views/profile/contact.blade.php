@@ -12,7 +12,7 @@
             <label for="phone" class="col-md-4 control-label">Phone number</label>
 
             <div class="col-md-6">
-                <input id="phone" type="number" class="form-control" name="phone" value="{{ Auth::user()->contact->phone }}" autofocus>
+                <input id="phone" type="number" class="form-control" name="phone" value="{{ Auth::user()->contact->getOriginal('phone') }}" autofocus>
 
                 @if ($errors->has('phone'))
                     <span class="help-block">

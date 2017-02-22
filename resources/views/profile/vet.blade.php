@@ -26,7 +26,7 @@
             <label for="phone" class="col-md-4 control-label">Phone number*</label>
 
             <div class="col-md-6">
-                <input id="phone" type="number" class="form-control" name="phone" required value="{{ (Auth::user()->vet->phone == 'No phone number set') ? '' : Auth::user()->vet->phone }}">
+                <input id="phone" type="number" class="form-control" name="phone" required value="{{ (Auth::user()->vet->getOriginal('phone') == 'No phone number set') ? '' : Auth::user()->vet->getOriginal('phone') }}">
 
                 @if ($errors->has('phone'))
                     <span class="help-block">

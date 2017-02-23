@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use File;
 use App\Pet;
 use Illuminate\Http\Request;
 
@@ -12,70 +14,30 @@ class RecordController extends Controller
         $this->middleware(['auth', 'admin']);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
 
-        $data = $request->except(['_token', '_method', 'pet_id']);
+        $data = $request->except(['_token', '_method', 'pet_id', 'vet_certificate_file', 'notes_file']);
+
+        $pet = Pet::find($request->pet_id);
+
+        if ($request->hasFile('vet_certificate_file')) {
+            if ($pet->info->vet_certificates_filename != null) {
+                File::delete(storage_path('app/' . $pet->info->vet_certificates_filename));
+            }
+
+            $path = $request->vet_certificate_file->store('documents/' . Auth::user()->id);
+            $data['vet_certificates_filename'] = $path;
+        }
+
+        if ($request->hasFile('notes_file')) {
+            if ($pet->info->notes_file != null) {
+                File::delete(storage_path('app/' . $pet->info->notes_filename));
+            }
+
+            $path = $request->notes_file->store('documents/' . Auth::user()->id);
+            $data['notes_filename'] = $path;
+        }
 
         // Nullify them empty strings because the database won't have those in integer fields
         foreach ($data as $key => $value) {
@@ -83,7 +45,7 @@ class RecordController extends Controller
                 $data[$key] = null;
             }
         }
-        $pet = Pet::find($request->pet_id);
+        
         $generalRecords = $pet->info;
         $medicalRecords = $pet->medicalRecords;
 
@@ -91,16 +53,5 @@ class RecordController extends Controller
         $generalRecords->update($data);
         alert()->success('Medical records updated');
         return redirect()->back();
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

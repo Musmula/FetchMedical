@@ -1,4 +1,4 @@
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/records/' . $records->id) }}">
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/records/' . $records->id) }}" enctype="multipart/form-data">
 
     {{ method_field('PUT') }}
     {{ csrf_field() }}

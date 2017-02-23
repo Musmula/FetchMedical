@@ -7,6 +7,7 @@ class LoadRoutes {
         $router->profile();
         $router->pdf();
         $router->users();
+        $router->files();
 
         return $router;
     }
@@ -51,5 +52,10 @@ class LoadRoutes {
         // Route::delete("/user/{id}", "UserController@destroy");
         Route::get('/user/{id}', "UserController@show");
         Route::put("/user/{id}/ban", "UserController@ban");
+    }
+
+    public function files() {
+        Route::get('/pets/{id}/file/notes', 'FileController@notes');
+        Route::get('/pets/{id}/file/vaccine', 'FileController@vaccine');
     }
 }

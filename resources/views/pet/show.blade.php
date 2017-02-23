@@ -58,10 +58,6 @@
                             <i class="fa fa-user-md"></i>
                         </a>
 
-                        <a href="{{ url('/pets/' . $pet->id . '/pdf/download') }}" class="btn btn-default" data-toggle="tooltip" title="Download profile">
-                            <i class="fa fa-download"></i>
-                        </a>
-
                         <a href="{{ url('/pets/' . $pet->id . '/pdf/view') }}" target="_blank" class="btn btn-default" data-toggle="tooltip" title="View profile as pdf">
                             <i class="fa fa-eye"></i>
                         </a>
@@ -79,6 +75,23 @@
                                 <i class="fa fa-trash"></i>
                             </button>
                         </form>
+                    </div> 
+                    <br> <br>
+                    <div class="btn-group" role="group">
+                        <a href="{{ url('/pets/' . $pet->id . '/pdf/download') }}" class="btn btn-default" data-toggle="tooltip" title="Download profile">
+                            <i class="fa fa-download"></i> Profile
+                        </a> 
+                        @if ($pet->info->notes_filename != null)
+                            <a href="{{ url('/pets/' . $pet->id . '/file/notes') }}" class="btn btn-default" data-toggle="tooltip" title="Download profile">
+                                <i class="fa fa-download"></i> Notes
+                            </a> 
+                        @endif
+
+                        @if ($pet->info->vet_certificates_filename != null)
+                            <a href="{{ url('/pets/' . $pet->id . '/file/vaccine') }}" class="btn btn-default" data-toggle="tooltip" title="Download profile">
+                                <i class="fa fa-download"></i> Vaccine cert.
+                            </a> 
+                        @endif
                     </div>
                 </div> 
             </div> {{-- Panel end --}} 

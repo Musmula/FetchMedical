@@ -294,7 +294,7 @@
     <label for='notes_file' class='col-md-4 control-label'>Notes file</label>
 
     <div class='col-md-6'>
-        <input type='date' class='form-control' name='notes_file' id='notes_file' value="{{ $generalRecords->notes_file }}">
+        <input type='file' class='form-control' name='notes_file' id='notes_file' value="{{ $generalRecords->notes_file }}">
 
         @if ($errors->has('notes_file'))
             <span class='help-block'>

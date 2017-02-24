@@ -26,7 +26,7 @@ class RecordController extends Controller
                 File::delete(storage_path('app/' . $pet->info->vet_certificates_filename));
             }
 
-            $path = $request->vet_certificate_file->store('documents/' . Auth::user()->id);
+            $path = $request->vet_certificate_file->store('documents/' . $pet->id);
             $data['vet_certificates_filename'] = $path;
         }
 
@@ -35,7 +35,7 @@ class RecordController extends Controller
                 File::delete(storage_path('app/' . $pet->info->notes_filename));
             }
 
-            $path = $request->notes_file->store('documents/' . Auth::user()->id);
+            $path = $request->notes_file->store('documents/' . $pet->id);
             $data['notes_filename'] = $path;
         }
 

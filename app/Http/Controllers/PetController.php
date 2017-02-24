@@ -192,6 +192,14 @@ class PetController extends Controller
     public function destroy($id)
     {
         $pet = Pet::find($id);
+        if ($pet->info->vet_certificates_filename != null) {
+            File::delete(storage_path('app/' . $pet->info->vet_certificates_filename));
+        }
+
+        if ($pet->info->notes_filename != null) {
+            File::delete(storage_path('app/' . $pet->info->notes_filename));
+        }
+
         if ($this->hasPermission(Auth::user(), $pet)) {
             if ($pet->picture != "Default.jpg") {
                 unlink(public_path() . '/uploads/petImages/' . $pet->picture);

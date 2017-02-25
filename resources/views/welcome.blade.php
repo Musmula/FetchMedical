@@ -42,43 +42,6 @@
             </div>
         </div>
 
-        <div class="testimonials">
-            <h2>Why people choose Fetch Medical</h2>
-
-            <div class="item">
-                <img src="{{ url('/img/testimonials/1.jpg') }}">
-                <div class="content">
-                    <h3 class="name">Caleb Smith</h3>
-                    <p class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore 
-                    </p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="{{ url('/img/testimonials/2.jpg') }}">
-                <div class="content">
-                    <h3 class="name">Annika Hansen</h3>
-                    <p class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore 
-                    </p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="{{ url('/img/testimonials/3.jpg') }}">
-                <div class="content">
-                    <h3 class="name">Excena Foer</h3>
-                    <p class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore 
-                    </p>
-                </div>
-            </div>
-        </div>
-
         <div class="cta-section">
             <h2>You too can register an account for FREE</h2>
             <a href="{{ url('register') }}" class="btn btn-primary">Lets do this</a>

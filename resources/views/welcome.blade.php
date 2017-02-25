@@ -42,11 +42,6 @@
             </div>
         </div>
 
-        <div class="cta-section">
-            <h2>You too can register an account for FREE</h2>
-            <a href="{{ url('register') }}" class="btn btn-primary">Lets do this</a>
-        </div>
-
         <div class="contact">
             <a href="mailto:hello@fetchmedical.com">hello@fetchmedical.com</a>
         </div>

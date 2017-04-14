@@ -94,6 +94,12 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="{{ url('/users') }}">
+                                            <i aria-hidden="true" class="fa fa-user"></i>
+                                            Users
+                                        </a>
+                                    </li>
+                                    <li>
    {{--                                      <a href="#">
                                             <i aria-hidden="true" class="fa fa-search"></i>
                                             Pet Search

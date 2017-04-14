@@ -8,6 +8,7 @@ class LoadRoutes {
         $router->pdf();
         $router->users();
         $router->files();
+        $router->admins();
 
         return $router;
     }
@@ -57,5 +58,10 @@ class LoadRoutes {
     public function files() {
         Route::get('/pets/{id}/file/notes', 'FileController@notes');
         Route::get('/pets/{id}/file/vaccine', 'FileController@vaccine');
+    }
+
+    public function admins() {
+        Route::get("users", "UserController@showUsers");
+        Route::put("admins", "UserController@admins");
     }
 }

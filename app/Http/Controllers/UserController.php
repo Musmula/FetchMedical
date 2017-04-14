@@ -36,4 +36,20 @@ class UserController extends Controller
         return redirect()->back();
     }
 
+    public function showUsers() {
+        $users = User::all();
+        return view("user.admins", compact('users'));
+    }
+
+    public function admins(Request $request) {
+        $user = User::find($request->user_id);
+        if ($request->action == 'remove') {
+            $user->is_admin = false;
+        } else {
+            $user->is_admin = true;
+        }
+        $user->save();
+        return redirect()->back();
+    }
+
 }

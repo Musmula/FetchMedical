@@ -55,9 +55,9 @@
                                     Login
                                 </button>
 
-{{--                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                    Forgot Your Password?
-                                </a> --}}
+                                <a class="btn btn-link" href="https://joyfulpets.com/index.php/contact-us" target="_blank">
+                                    Click here for help
+                                </a>
                             </div>
                         </div>
                     </form>
